@@ -14,9 +14,9 @@ function Header() {
 
     return (
         <div className={styles.header}>
-            <div href='http://localhost:8000'>
+            <a href='http://localhost:8000'>
                 Home
-            </div>
+            </a>
             <from className={styles.formDiv}>
                 <button className={styles.buttonImg} ><img width={24} height={24} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTliEHR87W0oPjpBMR6U9HkbxrOJqBq0WGNoqIynxY&s" alt="" /></button>
                 <input className={styles.searchInput} type="text" value={text} onChange={handleTextChange} />

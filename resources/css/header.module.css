@@ -1,0 +1,52 @@
+.header {
+  width: auto;
+  height: 60px;
+  margin: 0;
+  padding: 0 7%;
+  line-height: 60px;
+  background-color: #565053;
+  color: #fff;
+  font-size: 1.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.header .formDiv {
+  width: auto;
+  height: 20px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.header .formDiv .searchInput {
+  width: 40vw;
+  height: 28px;
+  padding: 5px 0 5px 36px;
+  border-radius: 5px;
+  color: #000;
+}
+
+.header .formDiv .buttonImg {
+  position: relative;
+  top: 6px;
+  left: 40px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.header .cartIcon {
+  position: absolute;
+  right: 8%;
+  font-size: 1.3rem;
+}
+
+.header .cartIcon:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=header.module.css.map */

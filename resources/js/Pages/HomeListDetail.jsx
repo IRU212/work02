@@ -5,6 +5,7 @@ import styles from '../../css/content.module.scss'
 import axios from 'axios'
 import Chat from './Chat'
 import ProductItemList from './ProductItemList'
+import CartPost from './CartPost'
 
 function HomeListDetail(props) {
 
@@ -38,6 +39,11 @@ function HomeListDetail(props) {
                 <div className={styles.HomeListDetailText}>
                     <div className={styles.introduce}>{ data?.introduce }</div>
                     <div className={styles.price}>{ data?.price }円</div>
+                    <div className={styles.price}>
+                        <CartPost
+                            info={{ dataProductId: dataId, dataUserId: props.auth.user.id }}
+                        />
+                    </div>
                     <div>
                         <Chat
                             info={{ dataProductId: dataId, dataUserId: props.auth.user.id }}

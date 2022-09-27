@@ -7,7 +7,7 @@
 
 .productList {
   width: auto;
-  margin: 60px 0 0 0;
+  margin: 40px 0 0 0;
   padding: 0 6%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,9 +17,10 @@
 }
 
 .productList .item {
-  width: 280px;
+  width: 270px;
   height: 280px;
-  margin: 60px 2% 0 2%;
+  margin: 60px 2% 0 2.6%;
+  padding: 10px 0;
   background-color: antiquewhite;
 }
 
@@ -33,7 +34,7 @@
 
 .HomeListDetail {
   width: auto;
-  margin: 80px 0 60px 0;
+  margin: 80px 0 40px 0;
   padding: 0 20%;
 }
 
@@ -64,11 +65,11 @@
 .HomeListDetail .HomeListDetailText {
   width: 60vw;
   height: 100%;
-  border: 1px solid #000;
+  border: 1px solid #727272;
   border-top: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 30px;
+  padding: 30px 30px 0 30px;
 }
 
 .HomeListDetail .HomeListDetailText .introduce {
@@ -79,7 +80,97 @@
 }
 
 .HomeListDetail .HomeListDetailText .price {
-  padding: 0 20px 0px 20px;
+  padding: 20px 20px 0px 20px;
   font-size: 1.1rem;
+}
+
+.Chat {
+  width: auto;
+  margin: 30px 0 0 0;
+  padding: 30px 3%;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+.Chat .details {
+  list-style: none;
+}
+
+.Chat .details .moreButtonBlock {
+  background-color: #000;
+  color: #fff;
+  padding: 8px 120px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+.Chat .details .moreButtonNone {
+  display: none;
+}
+
+.Chat .ChatWidthTrue {
+  width: 100%;
+  text-align: left;
+}
+
+.Chat .ChatWidthTrue .ChatTrue {
+  margin: 10px 0;
+  padding: 10px 14px;
+  border-radius: 5px;
+  background-color: #d7d7d7;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+}
+
+.Chat .ChatWidthFalse {
+  width: 100%;
+  text-align: right;
+}
+
+.Chat .ChatWidthFalse .ChatFalse {
+  margin: 10px 0;
+  padding: 10px 14px;
+  border-radius: 5px;
+  background-color: #d7d7d7;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+}
+
+.backColor {
+  background-color: antiquewhite;
+  margin-top: 20px;
+}
+
+.ProductItemList {
+  width: auto;
+  margin: 40px 0;
+  padding: 0 6%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.ProductItemList .ItemList {
+  width: 220px;
+  height: 210px;
+  margin: 40px 0% 0 3%;
+  padding: 10px 0;
+  background-color: antiquewhite;
+}
+
+.ProductItemList .ItemList img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
 }
 /*# sourceMappingURL=content.module.css.map */

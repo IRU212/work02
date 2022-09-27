@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
@@ -24,3 +25,7 @@ Route::get('/home',[ProductController::class,'index']);
 Route::get('/home/{id}',[ProductController::class,'show']);
 
 Route::get('/chat',[ChatController::class,'index']);
+
+Route::get('cart',[CartController::class,'index']);
+Route::get('cart/store',[CartController::class,'store']);
+Route::post('cart/store',[CartController::class,'store']);

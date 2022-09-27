@@ -24,7 +24,9 @@ function Header() {
             </a>
             <Search />
             <div className={styles.cartIcon}>
-                <ShoppingCartIcon />
+                <a href="http://localhost:8000/cartlist">
+                    <ShoppingCartIcon />
+                </a>
             </div>
         </div>
     )

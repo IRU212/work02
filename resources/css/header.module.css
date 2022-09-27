@@ -1,3 +1,7 @@
+* {
+  text-decoration: none;
+}
+
 .header {
   width: auto;
   height: 60px;
@@ -11,6 +15,12 @@
   display: -ms-flexbox;
   display: flex;
   position: relative;
+}
+
+.header .headerLink {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 50px;
 }
 
 .header .formDiv {
@@ -40,6 +50,45 @@
   background-color: rgba(0, 0, 0, 0);
 }
 
+.header .resultCover {
+  width: calc(100vw - 47px);
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 30px);
+          transform: translate(-50%, 30px);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  position: absolute;
+  text-align: center;
+}
+
+.header .resultCover .modal {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  background-color: #fff;
+  display: inline-block;
+  position: relative;
+  bottom: 21px;
+  width: 40vw;
+  padding: 0 18px;
+  border-radius: 5px;
+  left: 20px;
+}
+
+.header .resultCover .modal .resultFont {
+  margin: 10px 0;
+  color: #000;
+  line-height: normal;
+  text-align: left;
+}
+
+.header .resultCoverNone {
+  display: none;
+}
+
 .header .cartIcon {
   position: absolute;
   right: 8%;
@@ -48,5 +97,60 @@
 
 .header .cartIcon:hover {
   cursor: pointer;
+}
+
+.sideHeaderOpen {
+  position: relative;
+  height: 20px;
+  width: 28px;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 21px 0 0 0;
+}
+
+.sideHeaderOpen div {
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 28px;
+  background-color: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.sideHeaderOpen div:nth-child(1) {
+  bottom: 20px;
+}
+
+.sideHeaderOpen div:nth-child(2) {
+  bottom: 10px;
+}
+
+.sideHeaderOpen div:nth-child(3) {
+  bottom: 0px;
+}
+
+.modalCover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10vw;
+  height: 100vh;
+  margin: 0;
+  padding: 45px 3%;
+  background-color: #fff;
+  color: #000;
+}
+
+.modalCover .mainFont {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.sideLink {
+  color: #000;
 }
 /*# sourceMappingURL=header.module.css.map */

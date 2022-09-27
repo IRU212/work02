@@ -4,6 +4,7 @@ import Header from './Header'
 import styles from '../../css/content.module.scss'
 import axios from 'axios'
 import Chat from './Chat'
+import ProductItemList from './ProductItemList'
 
 function HomeListDetail(props) {
 
@@ -44,6 +45,7 @@ function HomeListDetail(props) {
                     </div>
                 </div>
             </div>
+            <ProductItemList />
         </div>
     )
 }

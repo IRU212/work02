@@ -134,3 +134,25 @@
     background-color: antiquewhite;
     margin-top: 20px;
 }
+
+.ProductItemList{
+    width: auto;
+    margin: 40px 0;
+    padding: 0 6%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .ItemList{
+        width: 220px;
+        height: 210px;
+        margin: 40px 0% 0 3% ;
+        padding: 10px 0;
+        background-color: antiquewhite;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+        }
+    }
+}

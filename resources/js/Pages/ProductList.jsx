@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import styles from '../../css/content.module.scss'
 
@@ -7,15 +7,17 @@ function ProductList() {
 
     const [datas,setData] = useState()
 
-    axios
-        .get("http://localhost:8000/api/home")
-        .then((res) => {
-            setData(res.data)
-            console.log(res.data)
-        })
-        .catch((err) => {
-            console.log(err)
-        },[])
+    useEffect(() => {
+        axios
+            .get("http://localhost:8000/api/home")
+            .then((res) => {
+                setData(res.data)
+                console.log(res.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    },[])
 
     return (
         <div className={styles.productList}>

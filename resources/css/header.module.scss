@@ -92,3 +92,55 @@
         }
     }
 }
+
+.sideHeaderOpen{
+    position: relative;
+    height: 20px;
+    width: 28px;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 21px 0 0 0;
+
+    div{
+        position: absolute;
+        left: 0;
+        height: 2px;
+        width: 28px;
+        background-color: #fff;
+        border-radius: 2px;
+        display: inline-block;
+        box-sizing: border-box;
+
+        &:nth-child(1){
+            bottom: 20px;
+        }
+
+        &:nth-child(2){
+            bottom: 10px;
+        }
+        &:nth-child(3){
+            bottom: 0px;
+        }
+    }
+}
+
+.modalCover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10vw;
+    height: 100vh;
+    margin: 0;
+    padding: 45px 3%;
+    background-color: #fff;
+    color: #000;
+
+    .mainFont{
+        font-size: 1.3rem;
+        font-weight: 900;
+    }
+}
+
+.sideLink{
+    color: #000;
+}

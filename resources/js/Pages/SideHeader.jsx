@@ -9,8 +9,18 @@ function Modal(props){
   return(
       <div id="modal" className="modal" onClick={(event)=>{event.stopPropagation()}}>
         <div>
-          <p>モーダル</p>
-          <button onClick={props.onClick}>閉じるボタン</button>
+          <div className={styles.modalCover}>
+            <div className={styles.mainFont}>カテゴリー</div>
+            <div><a href='http://localhost:8000/' className={styles.sideLink}>ゲーム</a></div>
+            <div><a href='http://localhost:8000/' className={styles.sideLink}>電化製品</a></div>
+            <div><a href='http://localhost:8000/' className={styles.sideLink}>グッズ</a></div>
+            <div><a href='http://localhost:8000/' className={styles.sideLink}>食料</a></div>
+            <div><a href='http://localhost:8000/' className={styles.sideLink}>服</a></div>
+            <div><a href='http://localhost:8000/' className={styles.sideLink}>漫画</a></div>
+            <div><a href='http://localhost:8000/' className={styles.sideLink}>グッズ</a></div>
+            <div><a href='http://localhost:8000/' className={styles.sideLink}>その他</a></div>
+            {/* <button onClick={props.onClick}>閉じるボタン</button> */}
+          </div>
         </div>
       </div>
   )
@@ -20,9 +30,9 @@ function Modal(props){
 // 親コンポーネント
 export default function SideHeader(){
 
-  const[isModalOpen,setIsModalOpen]=useState(false)
+  const[isModalOpen,setIsModalOpen] = useState(false)
 
-  const closeModal= useCallback(() =>{
+  const closeModal= useCallback(() => {
     setIsModalOpen(false)
     document.removeEventListener('click',closeModal)
   },[])
@@ -43,9 +53,15 @@ export default function SideHeader(){
 
   return (
     <div className="modalpage">
-      <button onClick={(event)=>{openModal(event)}}>モーダルを開く</button>
+      <div onClick={(event)=>{openModal(event)}}>
+        <div className={styles.sideHeaderOpen}>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+      </div>
 
-      {isModalOpen? <Modal onClick={(event)=>{closeModal(event)}}/> :""}
+      {isModalOpen ? <Modal onClick={(event)=>{closeModal(event)}}/> : ""}
 
     </div>
   );

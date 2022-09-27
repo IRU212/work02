@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/home',[ProductController::class,'index']);
 Route::get('/home/{id}',[ProductController::class,'show']);
+
+Route::get('/chat',[ChatController::class,'index']);

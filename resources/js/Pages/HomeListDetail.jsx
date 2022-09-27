@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import styles from '../../css/content.module.scss'
 import axios from 'axios'
+import Chat from './Chat'
 
 function HomeListDetail(props) {
 
@@ -25,6 +26,8 @@ function HomeListDetail(props) {
             })
     },[])
 
+    console.log(props.auth.user.id)
+
     return (
         <div className={styles.body}>
             <Header />
@@ -34,6 +37,11 @@ function HomeListDetail(props) {
                 <div className={styles.HomeListDetailText}>
                     <div className={styles.introduce}>{ data?.introduce }</div>
                     <div className={styles.price}>{ data?.price }円</div>
+                    <div>
+                        <Chat
+                            info={{ dataProductId: dataId, dataUserId: props.auth.user.id }}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

@@ -56,7 +56,7 @@
     .HomeListDetailText{
         width: 60vw;
         height: 100%;
-        border: 1px solid #000;
+        border: 1px solid rgb(114, 114, 114);
         border-top: none;
         box-sizing: border-box;
         padding: 30px;
@@ -73,4 +73,9 @@
             font-size: 1.1rem;
         }
     }
+}
+
+.backColor{
+    background-color: antiquewhite;
+    margin-top: 20px;
 }

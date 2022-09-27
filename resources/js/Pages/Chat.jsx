@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import styles from '../../css/content.module.scss'
+import ChatPost from './ChatPost'
 
 function Chat(props) {
 
@@ -29,6 +30,9 @@ function Chat(props) {
 
     return (
         <div className={styles.Chat}>
+            <ChatPost
+                info={{ dataProductId: props.info.dataProductId, dataUserId: props.info.dataUserId }}
+            />
             <details>
                 <summary className={styles.details}>
                     { results?.map((data,index) => {

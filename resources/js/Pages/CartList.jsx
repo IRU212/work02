@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Header from './Header'
+import styles from '../../css/cart.module.scss'
 
 function CartList(props) {
 
@@ -22,14 +23,19 @@ function CartList(props) {
     } )
 
     return (
-        <div>
+        <div className={styles.cartList}>
             <Header />
-            { results?.map((data,index) => 
-                <div key={index}>
-                    { data.name }
-                    { data.list_user_id }
-                </div>
-            ) }
+            <div className={styles.ListItem}>
+                { results?.map((data,index) => 
+                    <div key={index} className={styles.ItemBorderDiv}>
+                        <div className={styles.ImgDiv}><img src={data.image} alt="" /></div>
+                        <div className={styles.textDiv}>
+                            <div className={styles.nameFont}>{ data.name }</div>
+                            <div className={styles.introduceFont}>{ data.introduce }</div>
+                        </div>
+                    </div>
+                ) }
+            </div>
         </div>
     )
 }

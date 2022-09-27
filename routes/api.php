@@ -25,6 +25,8 @@ Route::get('/home',[ProductController::class,'index']);
 Route::get('/home/{id}',[ProductController::class,'show']);
 
 Route::get('/chat',[ChatController::class,'index']);
+Route::get('/chat/store',[ChatController::class,'store']);
+Route::post('/chat/store',[ChatController::class,'store']);
 
 Route::get('cart',[CartController::class,'index']);
 Route::get('cart/store',[CartController::class,'store']);

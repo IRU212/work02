@@ -5,4 +5,9 @@
   top: 0;
   left: 0;
 }
+
+.cartList .ListItem {
+  width: auto;
+  padding: 0 8%;
+}
 /*# sourceMappingURL=cart.module.css.map */

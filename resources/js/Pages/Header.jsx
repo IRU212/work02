@@ -4,6 +4,7 @@ import { useState } from 'react';
 import styles from '../../css/header.module.scss'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Search from './Search';
+import SideHeader from './SideHeader';
 
 function Header() {
 
@@ -15,13 +16,12 @@ function Header() {
 
     return (
         <div className={styles.header}>
-            <a href='http://localhost:8000'>
+            <div>
+                <SideHeader/>
+            </div>
+            <a className={styles.headerLink} href='http://localhost:8000'>
                 Home
             </a>
-            {/* <from className={styles.formDiv}>
-                <button className={styles.buttonImg} ><img width={24} height={24} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTliEHR87W0oPjpBMR6U9HkbxrOJqBq0WGNoqIynxY&s" alt="" /></button>
-                <input className={styles.searchInput} type="text" value={text} onChange={handleTextChange} />
-            </from> */}
             <Search />
             <div className={styles.cartIcon}>
                 <ShoppingCartIcon />

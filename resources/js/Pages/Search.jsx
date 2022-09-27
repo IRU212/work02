@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from '../../css/header.module.scss'
 
 function Search() {
@@ -34,6 +34,7 @@ function Search() {
     const ClickResultToggle = () => {
         setresultToggle(!resultToggle)
     }
+    
 
     return (
         <div>

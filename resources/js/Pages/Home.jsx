@@ -4,6 +4,7 @@ import ProductList from './ProductList'
 import Chat from './Chat'
 import styles from '../../css/content.module.scss'
 import Search from './Search'
+import SideHeader from './SideHeader'
 
 
 function Home() {

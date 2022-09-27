@@ -14,6 +14,12 @@
     display: flex;
     position: relative;
 
+    .headerLink{
+        text-decoration: none;
+        color: #fff;
+        margin-left: 50px;
+    }
+
     .formDiv{
         width: auto;
         height: 20px;

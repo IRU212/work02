@@ -1,12 +1,13 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-
+import { Link } from '@inertiajs/inertia-react';
 import styles from '../../css/content.module.scss'
+import Welcome from './Welcome';
 
-function ProductList() {
+function ProductList(props) {
 
     const [datas,setData] = useState()
-
+ 
     useEffect(() => {
         axios
             .get("http://localhost:8000/api/home")
@@ -21,6 +22,14 @@ function ProductList() {
 
     return (
         <div className={styles.productList}>
+            {/* <div>
+                <Link
+                    href={route('logout')}
+                    method="post"
+                    as="button">
+                    ログアウト
+                </Link>
+            </div> */}
             { datas?.map((data,index) => 
                 <a href={`http://localhost:8000/home/${data.id}`} className={styles.item} key={index}>
                     <img src={ data.image } alt="aa" />

@@ -21,7 +21,7 @@ function ProductItemList() {
         <div className={styles.ProductItemList}>
             { datas?.map((data,index) => 
                 <div key={index} className={styles.ItemList}>
-                    <a href={`http://localhost:8000/home/${data.id}`}><img className={styles.Item} src={ data.image } alt="" /></a>
+                    <a href={`http://localhost:8000/home/${data.id}`}><img className={styles.Item} src={`http://localhost:8000/${ data?.image }`} alt="" /></a>
                 </div>
             ) }
         </div>

@@ -7,10 +7,12 @@ import Search from './Search'
 import SideHeader from './SideHeader'
 
 
-function Home() {
+function Home(props) {
     return (
         <div className={styles.body}>
-            <Header />
+            <Header
+                info={ props.auth.user }
+            />
             <ProductList />
         </div>
     )

@@ -5,24 +5,21 @@ export default function Welcome(props) {
     return (
         <>
             <div>
-                    {/* {props.auth.user ? (
-                        <Link href={route('dashboard')} className="text-sm text-gray-700 dark:text-gray-500 underline">
+                    {props.auth?.user ? (
+                        <Link href={route('dashboard')}>
                             Dashboard
                         </Link>
                     ) : (
                         <>
-                            <Link href={route('login')} className="text-sm text-gray-700 dark:text-gray-500 underline">
+                            <Link href={route('login')}>
                                 Log in
                             </Link>
 
-                            <Link
-                                href={route('register')}
-                                className="ml-4 text-sm text-gray-700 dark:text-gray-500 underline"
-                            >
+                            <Link href={route('register')}>
                                 Register
                             </Link>
                         </>
-                    )} */}
+                    )}
             </div>
         </>
     );

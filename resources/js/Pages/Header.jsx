@@ -6,8 +6,9 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Search from './Search';
 import SideHeader from './SideHeader';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import HeaderIcon from './HeaderIcon';
 
-function Header() {
+function Header(props) {
 
     const [ text,setText ] = useState()
 
@@ -33,6 +34,11 @@ function Header() {
                 <a href="http://localhost:8000/cartlist">
                     <ShoppingCartIcon className={styles.iconSize} />
                 </a>
+            </div>
+            <div className={styles.UserIcon}>
+                <HeaderIcon
+                    info={ props.info }
+                />
             </div>
         </div>
     )

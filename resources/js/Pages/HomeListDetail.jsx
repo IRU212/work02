@@ -35,7 +35,7 @@ function HomeListDetail(props) {
             <Header />
             <div className={styles.HomeListDetail}>
                 <div className={styles.HomeListDetailName}>{ data?.name }</div>
-                <div className={styles.HomeListDetailImgBack}><img src={ data?.image } alt="" /></div>
+                <div className={styles.HomeListDetailImgBack}><img src={`http://localhost:8000/${ data?.image }`} alt="" /></div>
                 <div className={styles.HomeListDetailText}>
                     <div className={styles.introduce}>{ data?.introduce }</div>
                     <div className={styles.price}>{ data?.price }円</div>

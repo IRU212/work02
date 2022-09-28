@@ -31,9 +31,7 @@ export default function Register() {
     };
 
     return (
-        <GuestLayout>
-            <Head title="Register" />
-
+        <div>
             <form onSubmit={submit}>
                 <div>
                     <InputLabel forInput="name" value="Name" />
@@ -48,13 +46,11 @@ export default function Register() {
                         handleChange={onHandleChange}
                         required
                     />
-
                     <InputError message={errors.name} className="mt-2" />
                 </div>
 
                 <div className="mt-4">
                     <InputLabel forInput="email" value="Email" />
-
                     <TextInput
                         type="email"
                         name="email"
@@ -64,13 +60,11 @@ export default function Register() {
                         handleChange={onHandleChange}
                         required
                     />
-
                     <InputError message={errors.email} className="mt-2" />
                 </div>
 
                 <div className="mt-4">
                     <InputLabel forInput="password" value="Password" />
-
                     <TextInput
                         type="password"
                         name="password"
@@ -86,7 +80,6 @@ export default function Register() {
 
                 <div className="mt-4">
                     <InputLabel forInput="password_confirmation" value="Confirm Password" />
-
                     <TextInput
                         type="password"
                         name="password_confirmation"
@@ -95,20 +88,18 @@ export default function Register() {
                         handleChange={onHandleChange}
                         required
                     />
-
                     <InputError message={errors.password_confirmation} className="mt-2" />
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
-                    <Link href={route('login')} className="underline text-sm text-gray-600 hover:text-gray-900">
+                    <Link href={route('login')}>
                         Already registered?
                     </Link>
-
                     <PrimaryButton className="ml-4" processing={processing}>
                         Register
                     </PrimaryButton>
                 </div>
             </form>
-        </GuestLayout>
+        </div>
     );
 }

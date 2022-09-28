@@ -22,13 +22,6 @@ class PostController extends Controller
         $post->price = $request->price;
         $post->review = $request->review;
         $post->user_id = $request->user_id;
-        // $post->name = "test";
-        // $post->introduce = "test";
-        // $post->image = $path;
-        // $post->genre = 2;
-        // $post->price = 300;
-        // $post->review = 5;
-        // $post->user_id = 3;
         $post->save();
 
         return response()->json($post);

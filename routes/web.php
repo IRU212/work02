@@ -23,7 +23,7 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->middleware(['auth', 'verified']);
 
 
 Route::get('/home/{id}', function () {

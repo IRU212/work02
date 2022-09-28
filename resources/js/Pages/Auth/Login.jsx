@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import Checkbox from '@/Components/Checkbox';
-import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import styles from '../../../css/login.module.scss'
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -34,15 +34,14 @@ export default function Login({ status, canResetPassword }) {
         <div>
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
-            <form onSubmit={submit}>
+            <form onSubmit={submit} className={styles.login}>
                 <div>
-                    <InputLabel forInput="email" value="Email" />
-
+                    <InputLabel forInput="email" value="Email" className={styles.font} />
                     <TextInput
                         type="text"
                         name="email"
                         value={data.email}
-                        className="mt-1 block w-full"
+                        className={styles.inputText}
                         autoComplete="username"
                         isFocused={true}
                         handleChange={onHandleChange}
@@ -52,13 +51,13 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 <div className="mt-4">
-                    <InputLabel forInput="password" value="Password" />
+                    <InputLabel forInput="password" value="Password" className={styles.font} />
 
                     <TextInput
                         type="password"
                         name="password"
                         value={data.password}
-                        className="mt-1 block w-full"
+                        className={styles.inputText}
                         autoComplete="current-password"
                         handleChange={onHandleChange}
                     />
@@ -84,11 +83,16 @@ export default function Login({ status, canResetPassword }) {
                         </Link>
                     )}
 
-                    <PrimaryButton className="ml-4" processing={processing}>
+                    <PrimaryButton className={styles.buttonLogin} processing={processing}>
                         Log in
                     </PrimaryButton>
                 </div>
             </form>
+            <div>
+                <Link href={route('register')} className={styles.buttonRegister}>
+                    アカウントを作成
+                </Link>
+            </div>
         </div>
     );
 }

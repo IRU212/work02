@@ -32,7 +32,9 @@ function HomeListDetail(props) {
 
     return (
         <div className={styles.body}>
-            <Header />
+            <Header
+                info={ props.auth.user }
+            />
             <div className={styles.HomeListDetail}>
                 <div className={styles.HomeListDetailName}>{ data?.name }</div>
                 <div className={styles.HomeListDetailImgBack}><img src={`http://localhost:8000/${ data?.image }`} alt="" /></div>

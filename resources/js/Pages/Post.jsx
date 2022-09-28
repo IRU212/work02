@@ -60,7 +60,9 @@ function Post() {
 
     return (
         <div className={styles.post}>
-            <Header />
+            <Header
+                info={ props.auth.user }
+            />
             <form>
                 <div><input type="text" placeholder='name' onChange={handleChangeName} /></div>
                 <div><input type="text" placeholder='introduce' onChange={handleChangeIntroduce} /></div>

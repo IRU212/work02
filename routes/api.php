@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,9 @@ Route::get('/home/{id}',[ProductController::class,'show']);
 Route::get('/chat',[ChatController::class,'index']);
 Route::get('/chat/store',[ChatController::class,'store']);
 Route::post('/chat/store',[ChatController::class,'store']);
+
+Route::get('/post/store',[PostController::class,'store']);
+Route::post('/post/store',[PostController::class,'store']);
 
 Route::get('cart',[CartController::class,'index']);
 Route::get('cart/store',[CartController::class,'store']);

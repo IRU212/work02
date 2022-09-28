@@ -5,6 +5,7 @@ import styles from '../../css/header.module.scss'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Search from './Search';
 import SideHeader from './SideHeader';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 function Header() {
 
@@ -23,9 +24,14 @@ function Header() {
                 Home
             </a>
             <Search />
+            <div className={styles.PostIcon}>
+                <a href="http://localhost:8000/post">
+                    <AddCircleIcon className={styles.iconSize} />
+                </a>
+            </div>
             <div className={styles.cartIcon}>
                 <a href="http://localhost:8000/cartlist">
-                    <ShoppingCartIcon />
+                    <ShoppingCartIcon className={styles.iconSize} />
                 </a>
             </div>
         </div>

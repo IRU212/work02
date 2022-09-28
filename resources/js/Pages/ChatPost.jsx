@@ -31,12 +31,10 @@ function ChatPost(props) {
     }
     
     return (
-        <div className={styles.ChatPost}>
-            <form>
-                <input type="text" onChange={handleChangeText} />
-                <button onClick={ClickChatPost}>送信</button>
-            </form>
-        </div>
+        <form className={styles.ChatPost}>
+            <input type="text" onChange={handleChangeText} className={styles.inputText} />
+            <button onClick={ClickChatPost} className={styles.Button}>送信</button>
+        </form>
     )
 }
 

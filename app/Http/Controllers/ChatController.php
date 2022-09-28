@@ -17,9 +17,6 @@ class ChatController extends Controller
         $chat->text = $request->text;
         $chat->product_id = $request->product_id;
         $chat->user_id = $request->user_id;
-        // $chat->text = "test";
-        // $chat->product_id = 3;
-        // $chat->user_id = 3;
         $chat->save();
         return response()->json($chat);
     }

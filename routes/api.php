@@ -37,4 +37,4 @@ Route::get('cart',[CartController::class,'index']);
 Route::get('cart/store',[CartController::class,'store']);
 Route::post('cart/store',[CartController::class,'store']);
 
-Route::get('/genre/{id}',[GenreController::class,'find']);
+Route::get('genre/{id}',[GenreController::class,'find']);

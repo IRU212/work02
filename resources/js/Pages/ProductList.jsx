@@ -22,14 +22,6 @@ function ProductList(props) {
 
     return (
         <div className={styles.productList}>
-            {/* <div>
-                <Link
-                    href={route('logout')}
-                    method="post"
-                    as="button">
-                    ログアウト
-                </Link>
-            </div> */}
             { datas?.map((data,index) => 
                 <a href={`http://localhost:8000/home/${data.id}`} className={styles.item} key={index}>
                     <img src={ data.image } alt="aa" />

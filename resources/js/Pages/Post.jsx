@@ -3,7 +3,7 @@ import Header from './Header'
 import styles from '../../css/post.module.scss'
 import axios from 'axios'
 
-function Post() {
+function Post(props) {
 
     const [name,setName] = useState()
     const [introduce,setIntroduce] = useState()
@@ -66,7 +66,6 @@ function Post() {
             <form>
                 <div><input type="text" placeholder='name' onChange={handleChangeName} /></div>
                 <div><input type="text" placeholder='introduce' onChange={handleChangeIntroduce} /></div>
-                {/* <div><input type="text" placeholder='image' onChange={handleChangeImage} /></div> */}
                 <div><input type="file" accept='image/*' multiple onChange={handleChangeImage} /></div>
                 <div>
                 {/* 1,ゲーム 2,PC 3, 電化製品 4,グッズ 5,食料 6, 服 7, 漫画 8,グッズ　9, その他 */}

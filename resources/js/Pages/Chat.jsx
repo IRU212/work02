@@ -28,6 +28,8 @@ function Chat(props) {
         setMoreButtonDisplay(!moreButtonDisplay)
     }
 
+    console.log(results?.length)
+
     return (
         <div className={styles.Chat}>
             <ChatPost
@@ -61,7 +63,7 @@ function Chat(props) {
                     </div>
                 </summary>
                 { results?.map((data,index) => {
-                        if ( index > 3) {
+                        if ( index > 2) {
                             if (data.user_id == props.info.dataUserId) {
                                 return(
                                     <div className={styles.ChatWidthTrue}>

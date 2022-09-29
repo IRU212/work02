@@ -52,4 +52,8 @@ Route::get('/cartlist',function () {
     return Inertia::render('CartList');
 })->middleware(['auth', 'verified']);
 
+Route::get('/genre/{id}',function () {
+    return Inertia::render('ByGenre');
+})->middleware(['auth', 'verified']);
+
 require __DIR__.'/auth.php';

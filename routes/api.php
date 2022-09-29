@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
@@ -35,3 +36,5 @@ Route::post('/post/store',[PostController::class,'store']);
 Route::get('cart',[CartController::class,'index']);
 Route::get('cart/store',[CartController::class,'store']);
 Route::post('cart/store',[CartController::class,'store']);
+
+Route::get('/genre/{id}',[GenreController::class,'find']);

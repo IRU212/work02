@@ -18,7 +18,7 @@ function Header(props) {
 
     return (
         <div className={styles.header}>
-            <div>
+            <div className={styles.sideHeader}>
                 <SideHeader/>
             </div>
             <a className={styles.headerLink} href='http://localhost:8000'>

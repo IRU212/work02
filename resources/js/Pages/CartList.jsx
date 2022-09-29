@@ -24,7 +24,9 @@ function CartList(props) {
 
     return (
         <div className={styles.cartList}>
-            <Header />
+            <Header
+                info={ props.auth.user }
+            />
             <div className={styles.ListItem}>
                 { results?.map((data,index) => 
                     <div key={index} className={styles.ItemBorderDiv}>

@@ -30,6 +30,17 @@ function Chat(props) {
 
     console.log(results?.length)
 
+    if (results?.length == 0) {
+        console.log("空の配列です。")
+        var data = "チャットがありません"
+    } else {
+        console.log("空の配列ではありません。")
+    }
+
+    if (results?.length > 4){
+        var moreButton = "もっと見る"
+    }
+
     return (
         <div className={styles.Chat}>
             <ChatPost
@@ -37,6 +48,10 @@ function Chat(props) {
             />
             <details>
                 <summary className={styles.details}>
+                    <div className={styles.chatNone}>
+                        { data }
+                    </div>
+                    <div>
                     { results?.map((data,index) => {
                         if ( index < 3) {
                             if (data.user_id == props.info.dataUserId) {
@@ -58,8 +73,9 @@ function Chat(props) {
                             }
                         }
                     }) }
+                    </div>
                     <div className={`${moreButtonDisplay ? styles.moreButtonBlock : styles.moreButtonNone}`} onClick={ClickMoreButtonToggle}>
-                        もっと見る
+                        { moreButton }
                     </div>
                 </summary>
                 { results?.map((data,index) => {

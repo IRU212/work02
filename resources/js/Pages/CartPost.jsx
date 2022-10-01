@@ -10,6 +10,7 @@ function CartPost(props) {
     const userId = props.info.dataUserId
 
     const ClickCartSave = () => {
+
         axios
             .post("http://localhost:8000/api/cart/store",{
                 product_id: productId,
@@ -21,7 +22,7 @@ function CartPost(props) {
             .catch((err) => {
                 console.log(err.data)
             })
-        }
+    }
 
     return (
         <div>

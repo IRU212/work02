@@ -25,4 +25,9 @@ class CartController extends Controller
         return response()->json($cart);
     }
 
+    public function delete($id){
+        $cart = Cart::where('user_id','=',$id)->delete();
+        return response()->json($cart);
+    }
+
 }

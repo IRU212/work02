@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import styles from '../../css/cart.module.scss'
+import Purchase from './Purchase'
 
 function CartList(props) {
 
@@ -38,6 +39,9 @@ function CartList(props) {
                     </div>
                 ) }
             </div>
+            <Purchase
+                
+            />
         </div>
     )
 }

@@ -38,7 +38,7 @@ Route::post('/post/store',[PostController::class,'store']);
 Route::get('cart',[CartController::class,'index']);
 Route::get('cart/store',[CartController::class,'store']);
 Route::post('cart/store',[CartController::class,'store']);
-Route::get('cart/delete/{id}',[CartController::class,'delete']);
-Route::post('cart/delete/{id}',[CartController::class,'delete']);
+Route::get('cart/delete',[CartController::class,'delete']);
+Route::post('cart/delete',[CartController::class,'delete']);
 
 Route::get('genre/{id}',[GenreController::class,'find']);

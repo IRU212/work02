@@ -41,7 +41,7 @@ function Post(props) {
         data.append("genre",genre)
         data.append("price",price)
         data.append("review",review)
-        data.append("user_id",1)
+        data.append("user_id",props.auth.user.id)
 
         axios
             .post("http://localhost:8000/api/post/store",data,{

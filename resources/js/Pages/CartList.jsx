@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import styles from '../../css/cart.module.scss'
+import Purchase from './Purchase'
 
 function CartList(props) {
 
@@ -37,9 +38,9 @@ function CartList(props) {
                         </div>
                     </div>
                 ) }
-                <div className={styles.purchaseButton}>
-                    <a href="http://localhost:8000">購入する</a>
-                </div>
+                <Purchase 
+                    info={ props.auth.user.id }
+                />
             </div>
         </div>
     )

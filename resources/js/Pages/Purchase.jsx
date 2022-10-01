@@ -22,7 +22,7 @@ function Purchase(props) {
                 console.log(err)
         })
 
-        // ordersに保存 
+        // ordersに保存
         const detaStore = new FormData()
         detaStore.append("money",money)
         detaStore.append("user_id",userId)

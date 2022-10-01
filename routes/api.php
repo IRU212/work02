@@ -47,10 +47,12 @@ Route::get('cart/store',[CartController::class,'store']);
 Route::post('cart/store',[CartController::class,'store']);
 Route::get('cart/delete',[CartController::class,'delete']);
 Route::post('cart/delete',[CartController::class,'delete']);
+Route::get('cart/cancel/{id}',[CartController::class,'cancel']);
+Route::post('cart/cancel/{id}',[CartController::class,'cancel']);
 
 // オーダー機能
-Route::get('cart/delete',[CartController::class,'delete']);
-Route::post('cart/delete',[CartController::class,'delete']);
+Route::get('cart/delete',[OrderController::class,'delete']);
+Route::post('cart/delete',[OrderController::class,'delete']);
 
 //商品購入
 Route::get('/order/store',[OrderdetailController::class,'store']);

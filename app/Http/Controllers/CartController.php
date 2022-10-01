@@ -10,7 +10,7 @@ class CartController extends Controller
 {
     public function index(){
         $data = DB::table('carts')
-        ->select('carts.id','carts.user_id as list_user_id','carts.product_id',
+        ->select('carts.id','carts.user_id as list_user_id','carts.product_id','carts.quantity',
             "name","introduce","image","genre","price","review","products.user_id as post_user_id")
         ->rightJoin('products','carts.product_id','=','products.id')
         ->get();
@@ -29,6 +29,12 @@ class CartController extends Controller
     public function delete(Request $request){
         $user_id = $request->user_id;
         $cart = Cart::where('user_id','=',$user_id)->delete();
+        return response()->json($cart);
+    }
+
+    public function cancel(Request $request,$id){
+        // $user_id = $request->user_id;
+        $cart = Cart::find($id)->delete();
         return response()->json($cart);
     }
 

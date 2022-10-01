@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import styles from '../../css/cart.module.scss'
 import Purchase from './Purchase'
+import CartCancel from './CartCancel'
 
 function CartList(props) {
 
@@ -41,7 +42,10 @@ function CartList(props) {
                         <div className={styles.textDiv}>
                             <div className={styles.nameFont}>{ data.name }</div>
                             <div className={styles.introduceFont}>{ data.introduce }</div>
-                            { data.product_id }
+                            <div>{ data.quantity }個</div>
+                            <CartCancel
+                                cartId = {data.id}
+                            />
                         </div>
                     </div>
                 ) }

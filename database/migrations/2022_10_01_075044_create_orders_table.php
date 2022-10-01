@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('money')->comment('合計金額');
             $table->foreignId('orderdetail_id')->comment('注文商品一覧');
-            $table->foreignId('situation_id')->comment('配達状況');
+            $table->foreignId('situation_id')->comment('配達状況'); // 1:配達済み 2:配達中 3:未配達
             $table->foreignId('user_id');
             $table->timestamps();
         });

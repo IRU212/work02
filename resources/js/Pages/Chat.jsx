@@ -27,18 +27,9 @@ function Chat(props) {
     const ClickMoreButtonToggle = () => {
         setMoreButtonDisplay(!moreButtonDisplay)
     }
-
-    console.log(results?.length)
-
+    
     if (results?.length == 0) {
-        console.log("空の配列です。")
         var data = "チャットがありません"
-    } else {
-        console.log("空の配列ではありません。")
-    }
-
-    if (results?.length > 4){
-        var moreButton = "もっと見る"
     }
 
     return (
@@ -48,10 +39,6 @@ function Chat(props) {
             />
             <details>
                 <summary className={styles.details}>
-                    <div className={styles.chatNone}>
-                        { data }
-                    </div>
-                    <div>
                     { results?.map((data,index) => {
                         if ( index < 3) {
                             if (data.user_id == props.info.dataUserId) {
@@ -73,9 +60,11 @@ function Chat(props) {
                             }
                         }
                     }) }
+                    <div className={styles.chatNone}>
+                        { data }
                     </div>
                     <div className={`${moreButtonDisplay ? styles.moreButtonBlock : styles.moreButtonNone}`} onClick={ClickMoreButtonToggle}>
-                        { moreButton }
+                        もっと見る
                     </div>
                 </summary>
                 { results?.map((data,index) => {

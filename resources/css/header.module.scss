@@ -85,21 +85,33 @@
     .cartIcon{
         position: absolute;
         top: 10px;
-        right: 10%;
+        right: 12%;
         font-size: 2rem;
     }
 
     .PostIcon{
         position: absolute;
         top: 10px;
-        right: 15%;
+        right: 18%;
         font-size: 2rem;
     }
 
     .UserIcon{
         position: absolute;
         top: 8px;
-        right: 5%;
+        right: 6%;
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        .headerIconFont{
+            color: #fff;
+            position: absolute;
+            right: -46px;
+            top: -5.8px;
+            font-size: 0.9rem;
+        }
 
         .headerIcon{
             width: 44px;

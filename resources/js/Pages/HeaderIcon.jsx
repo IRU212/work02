@@ -12,7 +12,10 @@ function HeaderIcon(props) {
 
     return (
         <div className={styles.headerIcon}>
-            <img src="https://i.pinimg.com/originals/e5/77/9c/e5779c2869091ffc4327d62d3ecd3e41.png" onClick={ClickClassTogle} alt="" />
+            <div onClick={ClickClassTogle}>
+                <img src="https://i.pinimg.com/originals/e5/77/9c/e5779c2869091ffc4327d62d3ecd3e41.png" alt="" />
+                <div className={styles.headerIconFont}>▼{ props.info.name }</div>
+            </div>
             <div className={`${ iconToggleClassName ? styles.iconLink : styles.iconLinkNone}`}>
                 <div>{ props.info.name }</div>
                 <div>{ props.info.email }</div>

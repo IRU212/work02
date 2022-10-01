@@ -38,6 +38,9 @@ function CartList(props) {
                         </div>
                     </div>
                 ) }
+                <Purchase 
+                    info={ props.auth.user.id }
+                />
             </div>
             <Purchase
                 info={ props.auth.user.id }

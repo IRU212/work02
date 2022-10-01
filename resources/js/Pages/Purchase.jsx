@@ -1,5 +1,7 @@
 import axios from 'axios'
 import React from 'react'
+
+import React, { useState } from 'react'
 import styles from '../../css/cart.module.scss'
 
 function Purchase(props) {
@@ -13,17 +15,37 @@ function Purchase(props) {
 
         axios
             .post(`http://localhost:8000/api/cart/delete`,data)
+    
+    }
+
+    // const [productId,setProductId] = useState()
+
+    const PostCart = () => {
+
+        const data = new FormData()
+        data.append("user_id",2)
+        data.append("product_id",3)
+
+        axios
+            .post("http://localhost:8000/api/purchase/store",data)
+
             .then((res) => {
                 console.log(res.data)
             })
             .catch((err) => {
+
                 console.log(err)
+                console.log(err.data)
             })
     }
 
     return (
-        <div className={styles.purchaseButton} onClick={PostDelete}>
-            <a href="http://localhost:8000">購入する</a>
+        <div>  
+            <div className={styles.purchaseButton} onClick={PostDelete}>
+            <div className={styles.purchaseButton} onClick={PostCart}>
+                <a href="http://localhost:8000">購入する</a>
+            </div>
+            </div>
         </div>
     )
 }

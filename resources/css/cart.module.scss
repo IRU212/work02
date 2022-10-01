@@ -5,6 +5,23 @@
     top: 0;
     left: 0;
     
+    .purchaseButton{
+        position: absolute;
+        right: 16%;
+        margin: 40px 40px 0 50px;
+        background-color: #000;
+        color: #fff;
+        padding: 7px 11px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        width: fit-content;
+
+        a{
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+    
     .ListItem{
         width: auto;
         margin: 50px 0 0 0;
@@ -42,4 +59,12 @@
             }
         }
     }
+}
+
+.CartHistory{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

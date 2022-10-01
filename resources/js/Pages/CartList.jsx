@@ -37,6 +37,9 @@ function CartList(props) {
                         </div>
                     </div>
                 ) }
+                <div className={styles.purchaseButton}>
+                    <a href="http://localhost:8000">購入する</a>
+                </div>
             </div>
         </div>
     )

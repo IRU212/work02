@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React from 'react'
+import styles from '../../css/cart.module.scss'
 
 function CartCancel(props) {
 
@@ -17,7 +18,7 @@ function CartCancel(props) {
     }
 
     return (
-        <div onClick={ClickCancel}>
+        <div onClick={ClickCancel} className={styles.cartConcel}>
             カートを取り消す
         </div>
     )

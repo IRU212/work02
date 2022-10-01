@@ -60,3 +60,16 @@
         }
     }
 }
+
+.cartConcel{
+    position: absolute;
+    right: 20%;
+    border: #ccc solid 1px;
+    border-radius: 4px ;
+    padding: 4px 8px;
+    font-size: 0.9rem;
+
+    &:hover{
+        cursor: pointer;
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Header from './Header'
 import styles from '../../css/post.module.scss'
 import axios from 'axios'
@@ -12,6 +12,8 @@ function Post(props) {
     const [price,setPrice] = useState()
     const review = 6
 
+    const userImg = useRef()
+
     const handleChangeName = (e) => {
         setName(e.target.value)
     }
@@ -22,6 +24,13 @@ function Post(props) {
 
     const handleChangeImage = (e) => {
         setImage(e.target.files[0])
+        const image = e.target.files[0]
+        userImg.current.title = image.name
+        const reader = new FileReader()
+        reader.onload = (event) => {
+            userImg.current.setAttribute('src', event.target.result)
+        }
+        reader.readAsDataURL(image);
     }
 
     const handleChangeGenre = (e) => {
@@ -67,6 +76,9 @@ function Post(props) {
                 <div><input type="text" placeholder='name' onChange={handleChangeName} /></div>
                 <div><input type="text" placeholder='introduce' onChange={handleChangeIntroduce} /></div>
                 <div><input type="file" accept='image/*' multiple onChange={handleChangeImage} /></div>
+                <div>
+                    <img ref={userImg} />
+                </div>
                 <div>
                 {/* 1,ゲーム 2,PC 3, 電化製品 4,グッズ 5,食料 6, 服 7, 漫画 8,グッズ　9, その他 */}
                     <select onChange={handleChangeGenre}>

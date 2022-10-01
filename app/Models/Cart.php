@@ -11,6 +11,7 @@ class Cart extends Model
 
     protected $fiable = [
         'id',
+        'quantity',
         'product_id',
         'user_id',
     ];

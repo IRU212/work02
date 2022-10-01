@@ -4,6 +4,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderdetailController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
@@ -52,8 +53,8 @@ Route::get('cart/delete',[CartController::class,'delete']);
 Route::post('cart/delete',[CartController::class,'delete']);
 
 //商品購入
-Route::get('/order/store',[OrderController::class,'store']);
-Route::post('/order/store',[OrderController::class,'store']);
+Route::get('/order/store',[OrderdetailController::class,'store']);
+Route::post('/order/store',[OrderdetailController::class,'store']);
 
 //商品をジャンルごとに表示
 Route::get('genre/{id}',[GenreController::class,'find']);

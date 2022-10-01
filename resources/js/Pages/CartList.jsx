@@ -28,6 +28,7 @@ function CartList(props) {
         return sum + element.price
     },0)
 
+
     return (
         <div className={styles.cartList}>
             <Header
@@ -40,6 +41,7 @@ function CartList(props) {
                         <div className={styles.textDiv}>
                             <div className={styles.nameFont}>{ data.name }</div>
                             <div className={styles.introduceFont}>{ data.introduce }</div>
+                            { data.product_id }
                         </div>
                     </div>
                 ) }
@@ -47,10 +49,12 @@ function CartList(props) {
                     info={ props.auth.user.id }
                 />
             </div>
-            <Purchase
-                info = { props.auth.user.id }
-                totalMoney = { total }
-            />
+            <div>
+                <Purchase
+                    info = { props.auth.user.id }
+                    totalMoney = { total }
+                />
+            </div>
         </div>
     )
 }

@@ -10,6 +10,7 @@ import CartPost from './CartPost'
 function HomeListDetail(props) {
 
     const [data,setData] = useState()
+    const [quantity,setQuantity] = useState(1)
 
     const Id = props.ziggy.location
     const str = Id
@@ -28,7 +29,29 @@ function HomeListDetail(props) {
             })
     },[])
 
-    console.log(props.auth.user.id)
+    const ClickOrderPost = () => {
+
+        const data = new FormData()
+        data.append("quantity",quantity)
+        data.append("product_id",productId)
+
+        axios
+            .post(`http://localhost:8000/api/order/store`,data)
+            .then((res) => {
+                location.reload()
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+    const numberChange = (e) => {
+        setQuantity(e.target.value)
+    }
+
+    console.log(data?.id)
+
+    const productId = data?.id
 
     return (
         <div className={styles.body}>
@@ -41,9 +64,12 @@ function HomeListDetail(props) {
                 <div className={styles.HomeListDetailText}>
                     <div className={styles.introduce}>{ data?.introduce }</div>
                     <div className={styles.price}>{ data?.price }円</div>
-                    <div className={styles.price}>
+                    <div className={styles.price} onClick={ClickOrderPost}>
+                        <div>
+                            <input type="number" value={quantity} onChange={numberChange} />
+                        </div>
                         <CartPost
-                            info={{ dataProductId: dataId, dataUserId: props.auth.user.id }}
+                            info={{ dataProductId: dataId, dataUserId: props.auth.user.id,quantity: quantity }}
                         />
                     </div>
                     <div>

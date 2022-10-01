@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cart_details', function (Blueprint $table) {
+        Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->string('money')->comment('商品合計金額');
-            $table->integer('quantity')->comment('個数');
-            $table->string('product_id');
-            $table->string('cart_id');
+            $table->integer('quantity');
+            $table->foreignId('product_id');
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cart_details');
+        Schema::dropIfExists('carts');
     }
 };

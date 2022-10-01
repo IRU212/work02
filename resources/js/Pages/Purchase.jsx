@@ -9,6 +9,7 @@ function Purchase(props) {
         const userId = props.info
         const money = props.totalMoney
         
+        // カートの中身を削除
         const dataDelete = new FormData()
         dataDelete.append("user_id",userId)
 
@@ -21,6 +22,7 @@ function Purchase(props) {
                 console.log(err)
         })
 
+        // ordersに保存 
         const detaStore = new FormData()
         detaStore.append("money",money)
         detaStore.append("user_id",userId)

@@ -8,13 +8,15 @@ function CartPost(props) {
 
     const productId = props.info.dataProductId
     const userId = props.info.dataUserId
+    const quantity = props.info.quantity
 
     const ClickCartSave = () => {
 
         axios
             .post("http://localhost:8000/api/cart/store",{
                 product_id: productId,
-                user_id: userId
+                user_id: userId,
+                quantity: quantity
             })
             .then((res) => {
                 console.log(res.data)

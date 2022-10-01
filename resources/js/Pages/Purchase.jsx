@@ -7,6 +7,7 @@ function Purchase(props) {
     const PostClick = () => {
 
         const userId = props.info
+        const money = props.totalMoney
         
         const dataDelete = new FormData()
         dataDelete.append("user_id",userId)
@@ -21,7 +22,7 @@ function Purchase(props) {
         })
 
         const detaStore = new FormData()
-        detaStore.append("money",300)
+        detaStore.append("money",money)
         detaStore.append("user_id",userId)
 
         axios

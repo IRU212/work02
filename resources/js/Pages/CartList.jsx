@@ -23,6 +23,11 @@ function CartList(props) {
         return result.list_user_id == props.auth.user.id
     } )
 
+    // カート内の合計金額
+    const total = results?.reduce((sum,element) => {
+        return sum + element.price
+    },0)
+
     return (
         <div className={styles.cartList}>
             <Header
@@ -43,7 +48,8 @@ function CartList(props) {
                 />
             </div>
             <Purchase
-                info={ props.auth.user.id }
+                info = { props.auth.user.id }
+                totalMoney = { total }
             />
         </div>
     )

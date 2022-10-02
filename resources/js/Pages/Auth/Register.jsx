@@ -12,6 +12,7 @@ export default function Register() {
         email: '',
         password: '',
         password_confirmation: '',
+        image: ''
     });
 
     useEffect(() => {
@@ -35,7 +36,6 @@ export default function Register() {
             <form onSubmit={submit}>
                 <div>
                     <InputLabel forInput="name" value="Name" />
-
                     <TextInput
                         type="text"
                         name="name"
@@ -61,6 +61,17 @@ export default function Register() {
                         required
                     />
                     <InputError message={errors.email} className="mt-2" />
+                </div>
+
+                <div>
+                    <label htmlFor="image">画像:</label>
+                    <input
+                        type="file"
+                        onChange={(e) =>
+                            setData("image", e.target.files[0])
+                        }
+                    />
+                    {errors.image && <div>{errors.image}</div>}
                 </div>
 
                 <div className="mt-4">

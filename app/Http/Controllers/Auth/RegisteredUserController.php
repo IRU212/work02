@@ -34,6 +34,12 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+
+        $file_name = $request->image->getClientOriginalName();
+        $request->image->storeAs('public/image',$file_name);
+
+        $path = 'storage/image/'.$file_name;
+
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -44,7 +50,7 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'image' => "https://pjsekai.sega.jp/assets/images/special/download/sns-icon/unit06/icon_04_unit06_mizuki_02.png"
+            'image' => $path
         ]);
 
         event(new Registered($user));

@@ -28,7 +28,9 @@ function ProfileProductList(props) {
             <div className={styles.flex}>
                 { results?.map((data,index) => 
                     <div key={index} className={styles.productImg}>
-                        <img src={`http://localhost:8000/${data.image}`} alt="" />
+                        <a href={`http://localhost:8000/home/${data.id}`}>
+                            <img src={`http://localhost:8000/${data.image}`} alt="" />
+                        </a>
                     </div>
                 ) }
             </div>

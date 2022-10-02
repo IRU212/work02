@@ -7,31 +7,33 @@ function Purchase(props) {
     const PostClick = () => {
 
         const userId = props.info
-        const money = props.totalMoney
+        // const money = props.totalMoney
         const quantity = props.quantity
+        const price = props.price
         const productId = props.productId
+        const cartId = props.cartId
+
+        const money = price * quantity
         
         // カートの中身を削除
-        const dataDelete = new FormData()
-        dataDelete.append("user_id",userId)
-
-        axios
-            .post(`http://localhost:8000/api/cart/delete`,dataDelete)
-            .then((res) => {
-                console.log(res.data)
-            })
-            .catch((err) => {
-                console.log(err)
-        })
+        // const dataDelete = new FormData()
+        // dataDelete.append("user_id",userId)
 
         // axios
-        //     .post(`http://localhost:8000/api/cart/cancel/${cartId}`)
-        //     .then(() => {
-        //         location.reload()
+        //     .post(`http://localhost:8000/api/cart/delete`,dataDelete)
+        //     .then((res) => {
+        //         console.log(res.data)
         //     })
         //     .catch((err) => {
         //         console.log(err)
-        //     })
+        // })
+
+        // 購入した商品をカートから削除
+        axios
+            .post(`http://localhost:8000/api/cart/cancel/${cartId}`)
+            .catch((err) => {
+                console.log(err)
+            })
 
         // ordersに保存
         const detaStore = new FormData()

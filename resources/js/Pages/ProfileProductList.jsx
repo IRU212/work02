@@ -19,7 +19,7 @@ function ProfileProductList(props) {
     },[])
 
     const results =  datas?.filter( result => {
-        return result.user_id == props.info.id
+        return result.user_id == props.info
     } )
 
     return (

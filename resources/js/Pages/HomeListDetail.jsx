@@ -37,9 +37,6 @@ function HomeListDetail(props) {
 
         axios
             .post(`http://localhost:8000/api/order/store`,data)
-            .then((res) => {
-                location.reload()
-            })
             .catch((err) => {
                 console.log(err)
             })

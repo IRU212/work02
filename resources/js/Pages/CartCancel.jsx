@@ -7,6 +7,7 @@ function CartCancel(props) {
     const cartId = props.cartId
 
     const ClickCancel = () => {
+        
         axios
             .post(`http://localhost:8000/api/cart/cancel/${cartId}`)
             .then(() => {

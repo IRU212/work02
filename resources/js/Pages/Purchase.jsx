@@ -8,6 +8,8 @@ function Purchase(props) {
 
         const userId = props.info
         const money = props.totalMoney
+        const quantity = props.quantity
+        const productId = props.productId
         
         // カートの中身を削除
         const dataDelete = new FormData()
@@ -22,6 +24,15 @@ function Purchase(props) {
                 console.log(err)
         })
 
+        // axios
+        //     .post(`http://localhost:8000/api/cart/cancel/${cartId}`)
+        //     .then(() => {
+        //         location.reload()
+        //     })
+        //     .catch((err) => {
+        //         console.log(err)
+        //     })
+
         // ordersに保存
         const detaStore = new FormData()
         detaStore.append("money",money)
@@ -35,6 +46,20 @@ function Purchase(props) {
             .catch((err) => {
                 console.log(err)
         })
+
+        // orderdetailsに入れる
+        axios
+            .post("http://localhost:8000/api/orderdetail/store",{
+                product_id: productId,
+                quantity: quantity
+            })
+            .then((res) => {
+                console.log(res.data)
+            })
+            .catch((err) => {
+                console.log(err.data)
+            })
+
     }
 
 

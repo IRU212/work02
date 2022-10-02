@@ -24,6 +24,19 @@ function CartPost(props) {
             .catch((err) => {
                 console.log(err.data)
             })
+        
+        // orderdetailsに入れる
+        // axios
+        //     .post("http://localhost:8000/api/orderdetail/store",{
+        //         product_id: productId,
+        //         quantity: quantity
+        //     })
+        //     .then((res) => {
+        //         console.log(res.data)
+        //     })
+        //     .catch((err) => {
+        //         console.log(err.data)
+        //     })
     }
 
     return (

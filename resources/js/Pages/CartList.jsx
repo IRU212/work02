@@ -29,7 +29,6 @@ function CartList(props) {
         return sum + element.price
     },0)
 
-
     return (
         <div className={styles.cartList}>
             <Header
@@ -43,22 +42,28 @@ function CartList(props) {
                             <div className={styles.nameFont}>{ data.name }</div>
                             <div className={styles.introduceFont}>{ data.introduce }</div>
                             <div>{ data.quantity }個</div>
+                            <div>
+                                <Purchase
+                                    info = { props.auth.user.id }
+                                    totalMoney = { total }
+                                    quantity = { data.quantity }
+                                    productId = { data.product_id }
+                                    cartId = {data.id}
+                                />
+                            </div>
                             <CartCancel
                                 cartId = {data.id}
                             />
                         </div>
                     </div>
                 ) }
-                <Purchase 
-                    info={ props.auth.user.id }
-                />
             </div>
-            <div>
+            {/* <div>
                 <Purchase
                     info = { props.auth.user.id }
                     totalMoney = { total }
                 />
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -49,14 +49,21 @@ Route::get('cart/delete',[CartController::class,'delete']);
 Route::post('cart/delete',[CartController::class,'delete']);
 Route::get('cart/cancel/{id}',[CartController::class,'cancel']);
 Route::post('cart/cancel/{id}',[CartController::class,'cancel']);
+Route::get('cart/delete',[CartController::class,'delete']);
+Route::post('cart/delete',[CartController::class,'delete']);
 
 // オーダー機能
-Route::get('cart/delete',[OrderController::class,'delete']);
-Route::post('cart/delete',[OrderController::class,'delete']);
+Route::get('order/store',[OrderController::class,'store']);
+Route::post('order/store',[OrderController::class,'store']);
 
-//商品購入
-Route::get('/order/store',[OrderdetailController::class,'store']);
-Route::post('/order/store',[OrderdetailController::class,'store']);
+// 商品購入
+Route::get('/orderdetail/store',[OrderdetailController::class,'store']);
+Route::post('/orderdetail/store',[OrderdetailController::class,'store']);
+Route::get('/orderdetail/cancel',[OrderdetailController::class,'cancel']);
+Route::post('/orderdetail/cancel',[OrderdetailController::class,'cancel']);
 
 //商品をジャンルごとに表示
 Route::get('genre/{id}',[GenreController::class,'find']);
+
+// テスト
+Route::get('/test',[OrderdetailController::class,'index']);

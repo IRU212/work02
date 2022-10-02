@@ -1,8 +1,7 @@
 import React from 'react'
 import styles from '../../css/profile.module.scss'
 import Header from './Header'
-import ProductItemList from './ProductItemList'
-import ProductList from './ProductList'
+import ProfileProductList from './ProfileProductList'
 
 function Profile(props) {
     return (
@@ -19,10 +18,13 @@ function Profile(props) {
                 </div>
                 <div className={styles.profileText}>
                     <div className={styles.profileName}>
-                        aaa
+                    { props.auth.user.name }
                     </div>
                 </div>
             </div>
+            <ProfileProductList
+                info={ props.auth.user }
+            />
         </div>
     )
 }

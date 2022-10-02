@@ -46,3 +46,34 @@
         }
     }
 }
+
+.ProfileProductList{
+    width: auto;
+    margin: 100px 0 0 0;
+    padding: 0 10%;
+
+    .ProfileProductListFont{
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin: 10px 0 70px 0;
+    }
+
+    .flex{
+        display: flex;
+        flex-wrap: wrap;
+
+        .productImg{
+            width: 220px;
+            height: 220px;
+            margin: 0 40px 60px 40px;
+            padding: 10px 0;
+            background-color: antiquewhite;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: scale-down;
+            }
+        }
+    }
+}

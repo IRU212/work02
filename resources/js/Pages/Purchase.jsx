@@ -14,19 +14,6 @@ function Purchase(props) {
         const cartId = props.cartId
 
         const money = price * quantity
-        
-        // カートの中身を削除
-        // const dataDelete = new FormData()
-        // dataDelete.append("user_id",userId)
-
-        // axios
-        //     .post(`http://localhost:8000/api/cart/delete`,dataDelete)
-        //     .then((res) => {
-        //         console.log(res.data)
-        //     })
-        //     .catch((err) => {
-        //         console.log(err)
-        // })
 
         // 購入した商品をカートから削除
         axios

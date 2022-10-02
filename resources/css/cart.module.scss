@@ -94,3 +94,18 @@
     font-size: 1.3rem;
     color: #ccc;
 }
+
+.CartAllNoneButton{
+    position: absolute;
+    right: 18%;
+    margin: 40px 0 0 0;
+    background-color: #000;
+    color: #fff;
+    padding: 7px 11px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+
+    &:hover{
+        cursor: pointer;
+    }
+}

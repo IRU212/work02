@@ -4,6 +4,7 @@ import Header from './Header'
 import styles from '../../css/cart.module.scss'
 import Purchase from './Purchase'
 import CartCancel from './CartCancel'
+import CartAllCancel from './CartAllCancel'
 
 function CartList(props) {
 
@@ -30,19 +31,19 @@ function CartList(props) {
     },0)
 
     if (results?.length == 0) {
-        var chatNone = "カートに商品がありません"
+        var cartNone = "カートに商品がありません"
     }
+
+    const isCartNone = results?.length;
 
     function ResultsNone() {
 
         return(
             <div>
-                {chatNone}
+                {cartNone}
             </div>
         )
     }
-
-
 
     return (
         <div className={styles.cartList}>
@@ -77,12 +78,18 @@ function CartList(props) {
             <div className={styles.CartNone}>
                 <ResultsNone />
             </div>
-            {/* <div>
-                <Purchase
-                    info = { props.auth.user.id }
-                    totalMoney = { total }
-                />
-            </div> */}
+            <div>
+                <div>
+                    { 
+                        isCartNone == 0 ? 
+                        '' 
+                        :
+                        <CartAllCancel
+                            info = { props.auth.user.id }
+                        /> 
+                    }
+                </div>
+            </div>
         </div>
     )
 }

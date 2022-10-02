@@ -72,14 +72,19 @@ function Post(props) {
             <Header
                 info={ props.auth.user }
             />
-            <form>
-                <div><input type="text" placeholder='name' onChange={handleChangeName} /></div>
-                <div><input type="text" placeholder='introduce' onChange={handleChangeIntroduce} /></div>
-                <div><input type="file" accept='image/*' multiple onChange={handleChangeImage} /></div>
-                <div>
+            <form className={styles.form}>
+                <div className={styles.formImgBack}>
+                    <div className={styles.imageFile}>
+                        <label htmlFor="file_upload" className={styles.label}>ファイルを選択</label>
+                        <input type="file" accept='image/*' id='file_upload' multiple onChange={handleChangeImage} />
+                    </div>
                     <img ref={userImg} />
                 </div>
-                <div>
+                <div className={styles.fomrText}>
+                    <div><input type="text" placeholder='商品名' className={styles.inputText} onChange={handleChangeName} /></div>
+                    <div><input type="text" placeholder='商品紹介' className={styles.inputIntroducet} onChange={handleChangeIntroduce} /></div>
+                </div>
+                <div className={styles.Select}>
                 {/* 1,ゲーム 2,PC 3, 電化製品 4,グッズ 5,食料 6, 服 7, 漫画 8,グッズ　9, その他 */}
                     <select onChange={handleChangeGenre}>
                         <option value="1">ゲーム</option>
@@ -90,11 +95,11 @@ function Post(props) {
                         <option value="6">服</option>
                         <option value="7">漫画</option>
                         <option value="8">グッズ</option>
-                        <option value="9">その他</option>
+                        <option value="9" selected>その他</option>
                     </select>
                 </div>
-                <div><input type="text" placeholder='price' onChange={handleChangePrice} /></div>
-                <div><button onClick={PostClick}>投稿</button></div>
+                <div  className={styles.Price}><input type="text" placeholder='値段' onChange={handleChangePrice} /></div>
+                <div  className={styles.PostButton}><button onClick={PostClick}>出品</button></div>
             </form>
         </div>
     )

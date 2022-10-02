@@ -1,8 +1,118 @@
 .post{
     width: 100%;
     height: 100%;
-    margin: 0;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
     position: absolute;
     top: 0;
     left: 0;
+
+    .form{
+        width: auto;
+        margin: 0 0 0 0;
+        padding: 0 0 30px 0;
+        
+        .formImgBack{
+            width: auto;
+            height: 400px;
+            padding: 40px;
+            background-color: rgb(67, 66, 66);
+            position: relative;
+
+            .imageFile{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+
+                .label{
+                    padding: 18px 100px;
+                    border-radius: 10px;
+                    font-weight: 700;
+                    background-color: rgb(252, 247, 239);
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+
+                input{
+                    display: none;
+                }
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: scale-down;
+            }
+        }
+
+        .fomrText{
+            margin: 90px auto 60px auto;
+            width: fit-content;
+
+            .inputText{
+                width: 35vw;
+                border: 1.4px solid #ccc;
+                border-bottom: none;
+                height: 40px;
+                padding: 7px 16px;
+                border-top-right-radius: 25px;
+                border-top-left-radius: 25px;
+                outline: 1.4px solid #ccc;
+            }
+
+            .inputIntroducet{
+                border: 1.4px solid #ccc;
+                padding: 7px 16px;
+                width: 35vw;
+                height: 100px;
+                border-bottom-right-radius: 25px;
+                border-bottom-left-radius: 25px;
+                outline: 1.4px solid #ccc;
+            }
+        }
+
+        .Select{
+            margin: 60px auto;
+            width: fit-content;
+
+            select{
+                width: 37vw;
+                height: 30px;
+                padding: 7px 32px;
+                border: 1px solid #ccc;
+                outline: 1.4px solid #ccc;
+                border-radius: 5px;
+            }
+        }
+
+        .Price{
+            margin: 60px auto;
+            width: fit-content;
+
+            input{
+                width: 35vw;
+                height: 30px;
+                padding: 7px 16px;
+                border: 1px solid #ccc;
+                outline: 1.4px solid #ccc;
+                border-radius: 5px;
+            }
+        }
+
+        .PostButton{
+            margin: 60px auto;
+            width: fit-content;
+
+            button{
+                padding: 6px 24px;
+                border: #ccc solid 1px;
+                border-radius: 4px;
+                outline: 1.4px solid #ccc;
+                background-color: #fff;
+            }
+        }
+    }
 }

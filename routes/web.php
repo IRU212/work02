@@ -52,6 +52,10 @@ Route::get('/cartlist',function () {
     return Inertia::render('CartList');
 })->middleware(['auth', 'verified']);
 
+Route::get('/profile/{id}',function () {
+    return Inertia::render('Profile');
+})->middleware(['auth', 'verified']);
+
 Route::get('/carthistory',function () {
     return Inertia::render('CartHistory');
 })->middleware(['auth', 'verified']);

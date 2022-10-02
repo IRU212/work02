@@ -13,7 +13,7 @@ function HeaderIcon(props) {
     return (
         <div className={styles.headerIcon}>
             <div onClick={ClickClassTogle}>
-                <img src="https://i.pinimg.com/originals/e5/77/9c/e5779c2869091ffc4327d62d3ecd3e41.png" alt="" />
+                <img src={`http://localhost:8000/${ props.info.image }`} alt="icon" />
                 <div className={styles.headerIconFont}>▼{ props.info.name }</div>
             </div>
             <div className={`${ iconToggleClassName ? styles.iconLink : styles.iconLinkNone}`}>

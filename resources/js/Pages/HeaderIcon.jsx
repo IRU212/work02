@@ -19,6 +19,7 @@ function HeaderIcon(props) {
             <div className={`${ iconToggleClassName ? styles.iconLink : styles.iconLinkNone}`}>
                 <div>{ props.info.name }</div>
                 <div>{ props.info.email }</div>
+                <div><a href={`http://localhost:8000/profile/${ props.info.id }`}>プロフィール</a></div>
                 <div>
                     <Link
                         href={route('logout')}

@@ -44,6 +44,9 @@ function Chat(props) {
                             if (data.user_id == props.info.dataUserId) {
                                 return(
                                     <div className={styles.ChatWidthTrue}>
+                                        <a href={`http://localhost:8000/profile/${data.user_id}`}>
+                                            <img src={`http://localhost:8000/${data.image}`} alt="" />
+                                        </a>
                                         <div key={index} className={styles.ChatTrue}>
                                             { data.text }
                                         </div>
@@ -52,6 +55,9 @@ function Chat(props) {
                             } else {
                                 return(
                                     <div className={styles.ChatWidthFalse}>
+                                        <a href={`http://localhost:8000/profile/${data.user_id}`}>
+                                            <img src={`http://localhost:8000/${data.image}`} alt="" />
+                                        </a>
                                         <div key={index} className={styles.ChatFalse}>
                                             { data.text }
                                         </div>
@@ -72,6 +78,9 @@ function Chat(props) {
                             if (data.user_id == props.info.dataUserId) {
                                 return(
                                     <div className={styles.ChatWidthTrue}>
+                                        <a href={`http://localhost:8000/profile/${data.user_id}`}>
+                                            <img src={`http://localhost:8000/${data.image}`} alt="" />
+                                        </a>
                                         <div key={index} className={styles.ChatTrue}>
                                             { data.text }
                                         </div>
@@ -80,6 +89,9 @@ function Chat(props) {
                             } else {
                                 return(
                                     <div className={styles.ChatWidthFalse}>
+                                        <a href={`http://localhost:8000/profile/${data.user_id}`}>
+                                            <img src={`http://localhost:8000/${data.image}`} alt="" />
+                                        </a>
                                         <div key={index} className={styles.ChatFalse}>
                                             { data.text }
                                         </div>

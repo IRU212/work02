@@ -8,6 +8,7 @@ use App\Http\Controllers\OrderdetailController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// ユーザ情報
+Route::get('/user',[UserController::class,'index']);
+Route::get('/user/{id}',[UserController::class,'show']);
 
 //ホーム画面
 Route::get('/home',[ProductController::class,'index']);

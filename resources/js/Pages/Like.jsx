@@ -15,16 +15,23 @@ function Like(props) {
             .get(`http://localhost:8000/api/likeHome/${userId}/${productId}`)
             .then((res) => {
                 setData(res.data)
-                console.log(res.data)
+                // console.log(res.data)
             })
             .catch((err) => {
                 console.log(err)
             })
     },[])
 
+    // const toggle = data
+    // const [heart,setHeart] = useState(true)
+
     const ClickLike = () => {
         axios
             .post(`http://localhost:8000/api/like/${userId}/${productId}`)
+            .then(
+                location.reload()
+                // setHeart(!heart)
+            )
             .catch((err) => {
                 console.log(err)
         })
@@ -33,6 +40,10 @@ function Like(props) {
     const ClickUnLike = () => {
         axios
             .post(`http://localhost:8000/api/unlike/${userId}/${productId}`)
+            .then(
+                location.reload()
+                // setHeart(!heart)
+            )
             .catch((err) => {
                 console.log(err)
         })
@@ -42,13 +53,9 @@ function Like(props) {
         <div className={styles.Like}>
             <div>
                 { data ? 
-                    <div onClick={ClickUnLike} className={styles.LikeButton}>
-                        Like
-                    </div> 
+                    <div onClick={ClickUnLike} className={styles.LikeButton}></div> 
                     : 
-                    <div onClick={ClickLike} className={styles.UnLikeButton}>
-                        UnLike
-                    </div> 
+                    <div onClick={ClickLike} className={styles.UnLikeButton}></div> 
                 }
             </div>
         </div>

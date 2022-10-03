@@ -58,14 +58,16 @@ function HomeListDetail(props) {
             />
             <div className={styles.HomeListDetail}>
                 <div className={styles.HomeListDetailName}>{ data?.name }</div>
-                <div className={styles.HomeListDetailImgBack}><img src={`http://localhost:8000/${ data?.image }`} alt="" /></div>
-                <div className={styles.HomeListDetailText}>
-                    <div className={styles.introduce}>{ data?.introduce }</div>
-                    <div>
+                <div className={styles.HomeListDetailImgBack}>
+                    <img src={`http://localhost:8000/${ data?.image }`} alt="" />
+                    <div className={styles.heartPosition}>
                         <Like
                             info={{ dataProductId: dataId, dataUserId: props.auth.user.id, }}
                         />
                     </div>
+                </div>
+                <div className={styles.HomeListDetailText}>
+                    <div className={styles.introduce}>{ data?.introduce }</div>
                     <div className={styles.price}>{ data?.price }円</div>
                     <div className={styles.price} onClick={ClickOrderPost}>
                         <div>

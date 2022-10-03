@@ -19,4 +19,8 @@ class Product extends Model
         'review',
         'user_id'
     ];
+
+    public function users(){
+        return $this->belongsToMany(User::class,'product_user','user_id','product_id')->withTimestamps();
+    }
 }

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\LikeController;
+use App\Models\User;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -63,5 +65,8 @@ Route::get('/carthistory',function () {
 Route::get('/genre/{id}',function () {
     return Inertia::render('ByGenre');
 })->middleware(['auth', 'verified']);
+
+Route::get('/test',[LikeController::class,'store']);
+Route::post('/test',[LikeController::class,'store']);
 
 require __DIR__.'/auth.php';

@@ -19,8 +19,25 @@ function Follow(props) {
 
     return (
         <div>
-            Follow
-            <div>フォロー数{ datas?.userCount }人</div>
+            <div>Follow</div>
+            <div>フォロー数{ datas?.folloCount }人</div>
+            <div>フォロー一覧</div>
+            <div>
+                { datas?.followUser.map((data,index) => 
+                    <div key={index}>
+                        { data.name }
+                    </div>
+                ) }
+            </div>
+            <div>Follower</div>
+            <div>フォローワー数{ datas?.followerCount }人</div>
+            <div>
+                { datas?.followerUser.map((data,index) => 
+                    <div key={index}>
+                        { data.name }
+                    </div>
+                ) }
+            </div>
         </div>
     )
 }

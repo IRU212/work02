@@ -5,15 +5,17 @@ import Chat from './Chat'
 import styles from '../../css/content.module.scss'
 import Search from './Search'
 import SideHeader from './SideHeader'
+import Follow from './Follow'
 
 
 function Home(props) {
     return (
         <div className={styles.body}>
-            <Header
+            {/* <Header
                 info={ props.auth.user }
             />
-            <ProductList />
+            <ProductList /> */}
+            <Follow />
         </div>
     )
 }

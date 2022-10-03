@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Follow;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class FollowController extends Controller
 {
     public function index($userId,$followId){
-        $user = User::find($userId)->followers()->get();
-        return response()->json($user);
+        //  フォロー数カウント
+        $userCount = User::find($userId)->followers()->count();
+        return response()->json([
+            "userCount"=> $userCount
+        ]);
     }
 
     public function store($userId,$followId){

@@ -14,7 +14,4 @@ class Follow extends Model
         "following"
     ];
 
-    public function users(){
-        return $this->belongsToMany(User::class)->withTimestamps();
-    }
 }

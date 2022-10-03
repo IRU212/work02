@@ -75,7 +75,11 @@ class User extends Authenticatable
 
     // 多対多のリレーション
     public function followers(){
-        return $this->belongsToMany(Follow::class,'follower_user','user_id','follower_id')->withTimestamps();
+        return $this->belongsToMany(User::class,'follower_user','user_id','follower_id')->withTimestamps();
+    }
+
+    public function users(){
+        return $this->belongsToMany(User::class,'follower_user','follower_id','user_id')->withTimestamps();
     }
 
     // 特定のユーザをフォローしているか判定

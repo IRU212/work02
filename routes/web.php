@@ -66,7 +66,4 @@ Route::get('/genre/{id}',function () {
     return Inertia::render('ByGenre');
 })->middleware(['auth', 'verified']);
 
-Route::get('/test',[LikeController::class,'store']);
-Route::post('/test',[LikeController::class,'store']);
-
 require __DIR__.'/auth.php';

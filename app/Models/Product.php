@@ -20,6 +20,7 @@ class Product extends Model
         'user_id'
     ];
 
+    //多対多のリレーション
     public function users(){
         return $this->belongsToMany(User::class,'product_user','user_id','product_id')->withTimestamps();
     }

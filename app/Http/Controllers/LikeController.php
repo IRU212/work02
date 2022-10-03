@@ -7,18 +7,15 @@ use Illuminate\Http\Request;
 
 class LikeController extends Controller
 {
-    public function store(){
-        $user = User::find(2);
-        // $data = $a->products()->get();
-        // $data = foreach ($user->ranks as $rank) {
-        //     $rank->id;//会員ランクのID表示
-        //     $rank->name;//会員ランクの名前表示
-        // };
-        $data = $user->products()->sync(3);
-        echo $data;
+    public function store($productId){
+        $user = User::find(3);
+        $user->like($productId);
+        return 'ok!';
     }
 
-    public function destory(){
-        
+    public function destroy($productId){
+        $user = User::find(3);
+        $user->unlike($productId);
+        return 'ok!';
     }
 }

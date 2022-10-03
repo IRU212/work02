@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderdetailController;
 use App\Http\Controllers\PostController;
@@ -69,5 +70,11 @@ Route::post('/orderdetail/cancel',[OrderdetailController::class,'cancel']);
 //商品をジャンルごとに表示
 Route::get('genre/{id}',[GenreController::class,'find']);
 
+// いいね機能
+Route::get('/like/{productId}',[LikeController::class,'store']);
+Route::post('/like/{productId}',[LikeController::class,'store']);
+Route::get('/unlike/{productId}',[LikeController::class,'destroy']);
+Route::post('/unlike/{productId}',[LikeController::class,'destroy']);
+
 // テスト
-Route::get('/test',[OrderdetailController::class,'index']);
+// Route::get('/test',[OrderdetailController::class,'index']);

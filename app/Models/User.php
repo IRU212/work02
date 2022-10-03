@@ -26,26 +26,50 @@ class User extends Authenticatable
         'image'
     ];
 
-    // /**
-    //  * The attributes that should be hidden for serialization.
-    //  *
-    //  * @var array<int, string>
-    //  */
-    // protected $hidden = [
-    //     'password',
-    //     'remember_token',
-    // ];
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
 
-    // /**
-    //  * The attributes that should be cast.
-    //  *
-    //  * @var array<string, string>
-    //  */
-    // protected $casts = [
-    //     'email_verified_at' => 'datetime',
-    // ];
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
     
+    //多対多のリレーション
     public function products(){
         return $this->belongsToMany(Product::class)->withTimestamps();
+    }
+
+    //この商品に対して既にlikeしたかどうかを判別する
+    public function isLike($productId){
+        return $this->products()->where('product_id',$productId)->exists();
+    }
+
+    //isLikeを使って、既にlikeしたか確認したあと、いいねする（重複させない）
+    public function like($productId){
+        if ($this->isLike($productId)) {
+            //もし既に「いいね」していたら何もしない
+        } else {
+            $this->products()->attach($productId);
+        }
+    }
+
+    //isLikeを使って、既にlikeしたか確認して、もししていたら解除する
+    public function unlike($productId){
+        if ($this->isLike($productId)) {
+            $this->products()->detach($productId);
+        } else {
+            //もし既に「いいね」していたら何もしない
+        }
     }
 }

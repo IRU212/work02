@@ -71,10 +71,11 @@ Route::post('/orderdetail/cancel',[OrderdetailController::class,'cancel']);
 Route::get('genre/{id}',[GenreController::class,'find']);
 
 // いいね機能
-Route::get('/like/{productId}',[LikeController::class,'store']);
-Route::post('/like/{productId}',[LikeController::class,'store']);
-Route::get('/unlike/{productId}',[LikeController::class,'destroy']);
-Route::post('/unlike/{productId}',[LikeController::class,'destroy']);
+Route::get('/likeHome/{id}/{productId}',[LikeController::class,'index']);
+Route::get('/like/{id}/{productId}',[LikeController::class,'store']);
+Route::post('/like/{id}/{productId}',[LikeController::class,'store']);
+Route::get('/unlike/{id}/{productId}',[LikeController::class,'destroy']);
+Route::post('/unlike/{id}/{productId}',[LikeController::class,'destroy']);
 
 // テスト
 // Route::get('/test',[OrderdetailController::class,'index']);

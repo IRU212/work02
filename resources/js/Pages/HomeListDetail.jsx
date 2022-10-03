@@ -6,6 +6,7 @@ import axios from 'axios'
 import Chat from './Chat'
 import ProductItemList from './ProductItemList'
 import CartPost from './CartPost'
+import Like from './Like'
 
 function HomeListDetail(props) {
 
@@ -60,6 +61,11 @@ function HomeListDetail(props) {
                 <div className={styles.HomeListDetailImgBack}><img src={`http://localhost:8000/${ data?.image }`} alt="" /></div>
                 <div className={styles.HomeListDetailText}>
                     <div className={styles.introduce}>{ data?.introduce }</div>
+                    <div>
+                        <Like
+                            info={{ dataProductId: dataId, dataUserId: props.auth.user.id, }}
+                        />
+                    </div>
                     <div className={styles.price}>{ data?.price }円</div>
                     <div className={styles.price} onClick={ClickOrderPost}>
                         <div>

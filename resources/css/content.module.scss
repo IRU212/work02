@@ -211,3 +211,20 @@
         }
     }
 }
+
+.Like{
+
+    .LikeButton{
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .UnLikeButton{
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

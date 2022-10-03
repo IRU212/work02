@@ -295,3 +295,33 @@
         }
     }
 }
+
+.LikeProduct{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .LikeProductPadding{
+        width: auto;
+        margin: 100px 0 0 0;
+        padding: 0 10%;
+        display: flex;
+        flex-wrap: wrap;
+
+        .ImgBack{
+            width: 223px;
+            height: 220px;
+            margin: 0 40px 60px 40px;
+            padding: 10px 0;
+            background-color: antiquewhite;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: scale-down;
+            }
+        }
+    }
+}

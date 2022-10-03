@@ -62,6 +62,10 @@ Route::get('/carthistory',function () {
     return Inertia::render('CartHistory');
 })->middleware(['auth', 'verified']);
 
+Route::get('/like/{id}',function () {
+    return Inertia::render('LikeProduct');
+})->middleware(['auth', 'verified']);
+
 Route::get('/genre/{id}',function () {
     return Inertia::render('ByGenre');
 })->middleware(['auth', 'verified']);

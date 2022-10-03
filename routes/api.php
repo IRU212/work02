@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\FollowController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LikeproductController;
@@ -80,6 +81,9 @@ Route::get('/like/{id}/{productId}',[LikeController::class,'store']);
 Route::post('/like/{id}/{productId}',[LikeController::class,'store']);
 Route::get('/unlike/{id}/{productId}',[LikeController::class,'destroy']);
 Route::post('/unlike/{id}/{productId}',[LikeController::class,'destroy']);
+
+//フォロー機能
+Route::get('/follow',[FollowController::class,'index']);
 
 // テスト
 // Route::get('/test',[OrderdetailController::class,'index']);

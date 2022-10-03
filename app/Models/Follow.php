@@ -13,4 +13,8 @@ class Follow extends Model
         "id",
         "following"
     ];
+
+    public function users(){
+        return $this->belongsToMany(User::class)->withTimestamps();
+    }
 }

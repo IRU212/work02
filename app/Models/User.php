@@ -72,4 +72,9 @@ class User extends Authenticatable
             //もし既に「いいね」していたら何もしない
         }
     }
+
+    // 多対多のリレーション
+    public function followers(){
+        return $this->belongsToMany(Follow::class,'follower_user','user_id','follower_id')->withTimestamps();
+    }
 }

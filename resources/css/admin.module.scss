@@ -1,0 +1,51 @@
+.admin{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+
+    .sideHeader{
+        width: 15vw;
+        height: 100vh;
+        background-color: aqua;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .main{
+        width: auto;
+        position: absolute;
+        left: 15vw;
+
+        .mainFont{
+            font-size: 2rem;
+            margin: 60px 0 50px 120px;
+            border-bottom: 1.4px solid #000;
+            padding: 0 0 20px 40px;
+        }
+
+        table{
+            border-collapse:collapse;
+            margin: 0 0 0 120px;
+        }
+
+        .trTitle{
+            background-color: rgb(203, 203, 203);
+
+            .thTitle{
+                padding: 15px 90px;
+            }
+        }
+
+        .trResult{
+            padding: 20px 0;
+            border: 1px solid #ccc;
+
+            .thResult{
+                padding: 20px 0;
+            }
+        }
+    }
+}

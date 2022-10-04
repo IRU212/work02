@@ -87,8 +87,14 @@ require __DIR__.'/auth.php';
 // Admin
 Route::prefix('/admin')->group(function(){
     Route::get('/login',[AdminLoginController::class,'showLoginForm'])->name('admin.login');
-    Route::get('/home',[AdminTopController::class,'index'])->name('admin.home');
     Route::get('/login/post',[AdminLoginController::class,'login']);
     Route::post('/login/post',[AdminLoginController::class,'login']);
     Route::get('/logout',[AdminLogoutController::class,'logout'])->name('admin.logout');
+});
+
+Route::prefix('/admin')->group(function(){
+    Route::get('/home',[AdminTopController::class,'index'])->name('admin.home.user');
+    Route::get('/user',function(){
+        return Inertia::render('Admin/AdminUser');
+    });
 });

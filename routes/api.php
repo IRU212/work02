@@ -39,7 +39,6 @@ Route::get('/user/{id}',[UserController::class,'show']);
 Route::get('/home',[ProductController::class,'index']);
 Route::get('/home/{id}',[ProductController::class,'show']);
 
-
 //商品ごとのチャット機能
 Route::get('/chat',[ChatController::class,'index']);
 Route::get('/chat/store',[ChatController::class,'store']);

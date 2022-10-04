@@ -24,7 +24,7 @@ function Follow(props) {
             <a href={`http://localhost:8000/following/${userId}`}>
                 { datas?.folloCount }フォロー
             </a>
-            <a href=''>
+            <a href={`http://localhost:8000/follower/${userId}`}>
                 { datas?.followerCount }フォローワー
             </a>
         </div>

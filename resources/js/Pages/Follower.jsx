@@ -3,7 +3,7 @@ import Header from './Header'
 import styles from '../../css/profile.module.scss'
 import axios from 'axios'
 
-function Following(props) {
+function Follower(props) {
 
     const  [datas,setData] = useState()
 
@@ -31,7 +31,7 @@ function Following(props) {
             />
             <div className={styles.FollowingDiv}>
                 <div>
-                    { datas?.followUser.map((data,index) => 
+                    { datas?.followerUser.map((data,index) => 
                         <div key={index} className={styles.followList}>
                             <a href={`http://localhost:8000/profile/${data.id}`} className={styles.iconBack}><img src={`http://localhost:8000/${data.image}`} alt="" /></a>
                             <div className={styles.name}>{ data.name }</div>
@@ -43,4 +43,4 @@ function Following(props) {
     )
 }
 
-export default Following
+export default Follower

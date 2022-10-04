@@ -62,6 +62,10 @@ Route::get('/following/{id}',function () {
     return Inertia::render('Following');
 })->middleware(['auth', 'verified']);
 
+Route::get('/follower/{id}',function () {
+    return Inertia::render('Follower');
+})->middleware(['auth', 'verified']);
+
 Route::get('/carthistory',function () {
     return Inertia::render('CartHistory');
 })->middleware(['auth', 'verified']);

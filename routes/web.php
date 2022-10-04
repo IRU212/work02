@@ -58,6 +58,10 @@ Route::get('/profile/{id}',function () {
     return Inertia::render('Profile');
 })->middleware(['auth', 'verified']);
 
+Route::get('/following/{id}',function () {
+    return Inertia::render('Following');
+})->middleware(['auth', 'verified']);
+
 Route::get('/carthistory',function () {
     return Inertia::render('CartHistory');
 })->middleware(['auth', 'verified']);

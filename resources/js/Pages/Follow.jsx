@@ -21,9 +21,12 @@ function Follow(props) {
 
     return (
         <div className={styles.Folllow}>
-            <div>{userId}</div>
-            <div>{ datas?.folloCount }フォロー</div>
-            <div>{ datas?.followerCount }フォローワー</div>
+            <a href={`http://localhost:8000/following/${userId}`}>
+                { datas?.folloCount }フォロー
+            </a>
+            <a href=''>
+                { datas?.followerCount }フォローワー
+            </a>
         </div>
     )
 }

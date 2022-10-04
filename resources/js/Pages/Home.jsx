@@ -11,11 +11,10 @@ import Follow from './Follow'
 function Home(props) {
     return (
         <div className={styles.body}>
-            {/* <Header
+            <Header
                 info={ props.auth.user }
             />
-            <ProductList /> */}
-            <Follow />
+            <ProductList />
         </div>
     )
 }

@@ -9,14 +9,18 @@ use Illuminate\Support\Facades\DB;
 
 class FollowController extends Controller
 {
-    public function index($userId,$followId){
+    public function index($userId){
 
         //  フォロー
         $folloCount = User::find($userId)->followers()->count();
         $followUser = User::find($userId)->followers()->get();
 
         //フォロワー
-        $followerCount = DB::table('follower_user')->where('user_id','!=',$userId)->get()->count();
+        $followerCount = DB::table('follower_user')
+            ->where('user_id','!=',$userId)
+            ->where('follower_id','=',$userId)
+            ->leftJoin('users','users.id','=','follower_user.user_id')
+            ->count();
         $followerUser = DB::table('follower_user')
             ->where('user_id','!=',$userId)
             ->where('follower_id','=',$userId)

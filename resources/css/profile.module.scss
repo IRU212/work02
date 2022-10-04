@@ -38,10 +38,12 @@
         .profileText{
             width: auto;
             padding: 30px 25% 0 25% ;
+            position: relative;
 
             .profileName{
                 font-size: 1.1rem;
                 font-weight: 700;
+                margin: 0 0 0 30px;
             }
         }
     }
@@ -75,5 +77,16 @@
                 object-fit: scale-down;
             }
         }
+    }
+}
+
+.Folllow{
+    display: flex;
+    position: absolute;
+    top: 30px;
+    margin: 0 0 0 90px;
+
+    div{
+        margin: 0 20px 0 20px;
     }
 }

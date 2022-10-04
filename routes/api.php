@@ -83,7 +83,7 @@ Route::get('/unlike/{id}/{productId}',[LikeController::class,'destroy']);
 Route::post('/unlike/{id}/{productId}',[LikeController::class,'destroy']);
 
 //フォロー機能
-Route::get('/followHome/{userId}/{followId}',[FollowController::class,'index']);
+Route::get('/followHome/{userId}',[FollowController::class,'index']);
 Route::get('/follow/{userId}/{followId}',[FollowController::class,'store']);
 Route::post('/follow/{userId}/{followId}',[FollowController::class,'store']);
 Route::get('/unfollow/{userId}/{followId}',[FollowController::class,'destroy']);

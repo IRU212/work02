@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\LikeController;
 use App\Models\User;
@@ -79,3 +80,7 @@ Route::get('/genre/{id}',function () {
 })->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
+
+
+// Admin
+Route::get('/admin/login',[AdminLoginController::class,'showLoginForm']);

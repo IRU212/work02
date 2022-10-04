@@ -7,6 +7,7 @@
 #### カート機能
 #### いいね機能
 #### お気に入り機能
+#### フォロー機能
 
 ##### npm install styled-components
 ##### npm install @mui/icons-material @mui/material @emotion/styled @emotion/react

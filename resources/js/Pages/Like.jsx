@@ -11,7 +11,6 @@ function Like(props) {
 
     useEffect(() => {
         axios
-            // .get(`http://localhost:8000/api/likeHome/${userId}/${productId}`)
             .get(`http://localhost:8000/api/likeHome/${userId}/${productId}`)
             .then((res) => {
                 setData(res.data)

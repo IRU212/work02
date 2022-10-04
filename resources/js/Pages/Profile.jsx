@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from '../../css/profile.module.scss'
 import Follow from './Follow'
+import FollowButton from './FollowButton'
 import Header from './Header'
 import ProfileProductList from './ProfileProductList'
 
@@ -42,6 +43,10 @@ function Profile(props) {
                 <div className={styles.profileText}>
                     <div className={styles.profileName}>
                     { data?.name }
+                    <FollowButton
+                        info={ props.auth.user }
+                        profileId={ dataId }
+                    />
                     <Follow
                         info={ data?.id }
                     />

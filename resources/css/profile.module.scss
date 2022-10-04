@@ -84,11 +84,41 @@
     display: flex;
     position: absolute;
     top: 30px;
-    margin: 0 0 0 90px;
+    right: 15%;
 
     a{
         margin: 0 20px 0 20px;
         color: #000;
+    }
+}
+
+.FollowButton{
+    position: absolute;
+    top: 22px;
+    margin: 0 0 0 100px;
+    font-size: 0.85rem;
+    padding: 10px 15px;
+    border-radius: 22px;
+    border: 1px solid #000;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.UnfollowButton{
+    position: absolute;
+    top: 22px;
+    margin: 0 0 0 100px;
+    font-size: 0.85rem;
+    padding: 10px 15px;
+    border-radius: 22px;
+    border: 1px solid #000;
+    color: #fff;
+    background-color: #000;
+
+    &:hover{
+        cursor: pointer;
     }
 }
 

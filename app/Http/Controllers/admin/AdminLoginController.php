@@ -13,19 +13,7 @@ class AdminLoginController extends Controller
     }
 
     public function login(Request $request){
-
-        $user_id = $request->input("user_id");
-		$password = $request->input("password");
-
         //ログイン成功
-        if ($user_id == "iru212" && $password == "ryuuya2121b") {
-            $request->session()->put("admin_auth", true);
-			return redirect("admin");
-        }
-
-        //ログイン失敗
-		return redirect("admin/login")->withErrors([
-			"login" => "ユーザーIDまたはパスワードが違います"
-		]);
+		return redirect()->route('admin.home');
     }
 }

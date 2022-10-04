@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AdminLoginController;
+use App\Http\Controllers\admin\AdminTopController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\LikeController;
 use App\Models\User;
@@ -83,4 +84,7 @@ require __DIR__.'/auth.php';
 
 
 // Admin
-Route::get('/admin/login',[AdminLoginController::class,'showLoginForm']);
+Route::prefix('/admin')->group(function(){
+    Route::get('/login',[AdminLoginController::class,'showLoginForm']);
+    Route::get('/home',[AdminTopController::class,'index'])->name('admin.home');
+});

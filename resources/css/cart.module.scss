@@ -109,3 +109,16 @@
         cursor: pointer;
     }
 }
+
+.cartButton{
+    background-color: #000;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    margin: 20px 0 0 0;
+
+    &:hover{
+        cursor: pointer;
+    }
+}

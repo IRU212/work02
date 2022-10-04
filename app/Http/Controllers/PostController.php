@@ -20,6 +20,7 @@ class PostController extends Controller
         $post->image = $path;
         $post->genre = $request->genre;
         $post->price = $request->price;
+        $post->stock = $request->stock;
         $post->review = $request->review;
         $post->user_id = $request->user_id;
         $post->save();

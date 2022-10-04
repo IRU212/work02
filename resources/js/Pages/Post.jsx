@@ -10,6 +10,7 @@ function Post(props) {
     const [image,setImage] = useState()
     const [genre,setGenre] = useState()
     const [price,setPrice] = useState()
+    const [number,setNumber] = useState()
     const review = 6
 
     const userImg = useRef()
@@ -41,6 +42,10 @@ function Post(props) {
         setPrice(e.target.value)
     }
 
+    const handleChangeNumber = (e) => {
+        setNumber(e.target.value)
+    }
+
     const PostClick = () => {
         
         const data = new FormData()
@@ -49,6 +54,7 @@ function Post(props) {
         data.append("image",image)
         data.append("genre",genre)
         data.append("price",price)
+        data.append("stock",number)
         data.append("review",review)
         data.append("user_id",props.auth.user.id)
 
@@ -98,8 +104,9 @@ function Post(props) {
                         <option value="9" selected>その他</option>
                     </select>
                 </div>
-                <div  className={styles.Price}><input type="text" placeholder='値段' onChange={handleChangePrice} /></div>
-                <div  className={styles.PostButton}><button onClick={PostClick}>出品</button></div>
+                <div className={styles.Number}><input type="number" placeholder='出品数' onChange={handleChangeNumber} /></div>
+                <div className={styles.Price}><input type="text" placeholder='値段' onChange={handleChangePrice} /></div>
+                <div className={styles.PostButton}><button onClick={PostClick}>出品</button></div>
             </form>
         </div>
     )

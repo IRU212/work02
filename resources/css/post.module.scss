@@ -88,6 +88,20 @@
             }
         }
 
+        .Number{
+            margin: 60px auto;
+            width: fit-content; 
+
+            input{
+                width: 36vw;
+                height: 20px;
+                padding: 10px 10px;
+                border: 1px solid #ccc;
+                outline: 1.4px solid #ccc;
+                border-radius: 5px;
+            }
+        }
+
         .Price{
             margin: 60px auto;
             width: fit-content;

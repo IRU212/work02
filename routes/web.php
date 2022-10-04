@@ -93,8 +93,8 @@ Route::prefix('/admin')->group(function(){
 });
 
 Route::prefix('/admin')->group(function(){
-    Route::get('/home',[AdminTopController::class,'index'])->name('admin.home.user');
+    Route::get('/home',[AdminTopController::class,'index'])->name('admin.home');
     Route::get('/user',function(){
         return Inertia::render('Admin/AdminUser');
-    });
+    })->name('admin.home.user');
 });

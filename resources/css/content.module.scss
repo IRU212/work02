@@ -68,8 +68,14 @@
         border: 1px solid rgb(114, 114, 114);
         border-top: none;
         box-sizing: border-box;
-        padding: 30px 30px 0 30px;
+        padding: 40px 30px 0 30px;
         position: relative;
+
+        .cartPosition{
+            position: absolute;
+            right: 80px;
+            top: 120px;
+        }
 
         .introduce{
             border-bottom: 1px solid #ccc;
@@ -79,7 +85,7 @@
         }
 
         .price{
-            padding: 20px 20px 0px 20px ;
+            padding: 40px 20px 20px 20px ;
             font-size: 1.1rem;
         }
     }

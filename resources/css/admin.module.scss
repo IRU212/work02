@@ -6,7 +6,7 @@
     display: flex;
 
     .sideHeader{
-        width: 15vw;
+        width: 10vw;
         height: 100vh;
         background-color: aqua;
         position: fixed;
@@ -21,14 +21,14 @@
 
         .mainFont{
             font-size: 2rem;
-            margin: 60px 0 50px 120px;
+            margin: 60px 0 50px 80px;
             border-bottom: 1.4px solid #000;
             padding: 0 0 20px 40px;
         }
 
         table{
             border-collapse:collapse;
-            margin: 0 0 0 120px;
+            margin: 0 0 0 80px;
         }
 
         .trTitle{

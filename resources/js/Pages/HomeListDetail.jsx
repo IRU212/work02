@@ -69,9 +69,9 @@ function HomeListDetail(props) {
                 <div className={styles.HomeListDetailText}>
                     <div className={styles.introduce}>{ data?.introduce }</div>
                     <div className={styles.price}>{ data?.price }円</div>
-                    <div className={styles.price} onClick={ClickOrderPost}>
+                    <div className={styles.cartPosition} onClick={ClickOrderPost}>
                         <div>
-                            <input type="number" value={quantity} onChange={numberChange} />
+                            <input type="number" min="0" max={ data?.stock } value={quantity} onChange={numberChange} />
                         </div>
                         <CartPost
                             info={{ dataProductId: dataId, dataUserId: props.auth.user.id,quantity: quantity }}

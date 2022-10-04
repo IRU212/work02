@@ -24,24 +24,11 @@ function CartPost(props) {
             .catch((err) => {
                 console.log(err.data)
             })
-        
-        // orderdetailsに入れる
-        // axios
-        //     .post("http://localhost:8000/api/orderdetail/store",{
-        //         product_id: productId,
-        //         quantity: quantity
-        //     })
-        //     .then((res) => {
-        //         console.log(res.data)
-        //     })
-        //     .catch((err) => {
-        //         console.log(err.data)
-        //     })
     }
 
     return (
         <div>
-            <button onClick={ClickCartSave}>カートに入れる</button>
+            <button className={styles.cartButton} onClick={ClickCartSave}>カートに入れる</button>
         </div>
     )
 }

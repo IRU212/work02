@@ -1,4 +1,10 @@
-## フリマサイト
+## フリマサイト 
+
+### 言語
+
+#### php(laravel)
+#### js(react)
+#### css(scss)
 
 ### 機能一覧
 
@@ -8,6 +14,7 @@
 #### いいね機能
 #### お気に入り機能
 #### フォロー機能
+#### 管理画面
 
 ##### npm install styled-components
 ##### npm install @mui/icons-material @mui/material @emotion/styled @emotion/react

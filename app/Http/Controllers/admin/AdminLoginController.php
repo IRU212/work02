@@ -14,6 +14,7 @@ class AdminLoginController extends Controller
 
     public function login(Request $request){
         //ログイン成功
+        $request->session()->put("admin_auth", true);
 		return redirect()->route('admin.home');
     }
 }

@@ -92,9 +92,3 @@ Route::post('/unfollow/{userId}/{followId}',[FollowController::class,'destroy'])
 
 // テスト
 // Route::get('/test',[OrderdetailController::class,'index']);
-
-// Admin
-Route::prefix('/admin')->group(function(){
-    Route::get('/login/post',[AdminLoginController::class,'login']);
-    Route::post('/login/post',[AdminLoginController::class,'login']);
-});

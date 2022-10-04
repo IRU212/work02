@@ -8,7 +8,7 @@ function Login() {
 
     const ClickLogin = () => {
         if ( name == "iru212" && password == "ryuuya2121b") {
-            window.location.href = "http://localhost:8000/api/admin/login/post";
+            window.location.href = "http://localhost:8000/admin/login/post";
         } else {
             window.alert("ユーザ名かパスワードが違います")
         }

@@ -26,7 +26,7 @@ class CartController extends Controller
         $cart->save();
 
         $product = new Product();
-        $stock_data = $product->find(1)->pluck('stock')->first();
+        $stock_data = $product->find($request->product_id)->pluck('stock')->first();
         $stock = $stock_data - $request->quantity;
         $product->where('id',$request->product_id)->update(['stock' => $stock]);
 
@@ -46,12 +46,7 @@ class CartController extends Controller
     }
 
     public function test(){
-        $product = new Product();
-        $stock_data = $product->find(1)->pluck('stock')->first();
-        $data = $stock_data - 1;
-        // $data = array_values($stock_data);
-        // return response()->json($data);
-        echo $data;
+
     }
 
 }

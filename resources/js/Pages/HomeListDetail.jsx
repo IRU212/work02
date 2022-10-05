@@ -38,6 +38,9 @@ function HomeListDetail(props) {
 
         axios
             .post(`http://localhost:8000/api/order/store`,data)
+            .then(() => {
+                window.location.reload()
+            })
             .catch((err) => {
                 console.log(err)
             })
@@ -45,6 +48,12 @@ function HomeListDetail(props) {
 
     const numberChange = (e) => {
         setQuantity(e.target.value)
+    }
+
+    if ( data?.stock == 0 ) {
+        var stockJudgement = true
+    } else {
+        var stockJudgement = false
     }
 
     console.log(data?.id)
@@ -59,6 +68,7 @@ function HomeListDetail(props) {
             <div className={styles.HomeListDetail}>
                 <div className={styles.HomeListDetailName}>{ data?.name }</div>
                 <div className={styles.HomeListDetailImgBack}>
+                    <div className={styles.SoldOutFont}>Sold Out</div>
                     <img src={`http://localhost:8000/${ data?.image }`} alt="" />
                     <div className={styles.heartPosition}>
                         <Like
@@ -70,12 +80,19 @@ function HomeListDetail(props) {
                     <div className={styles.introduce}>{ data?.introduce }</div>
                     <div className={styles.price}>{ data?.price }円</div>
                     <div className={styles.cartPosition} onClick={ClickOrderPost}>
-                        <div>
-                            <input type="number" min="0" max={ data?.stock } value={quantity} onChange={numberChange} />
-                        </div>
-                        <CartPost
-                            info={{ dataProductId: dataId, dataUserId: props.auth.user.id,quantity: quantity }}
-                        />
+                        {/* 在庫が0のときは購入ボタンを表示しない */}
+                        { stockJudgement ?
+                            ''
+                            :
+                            <div>
+                                <div>
+                                    <input type="number" min="0" max={ data?.stock } value={quantity} onChange={numberChange} />
+                                </div>
+                                <CartPost
+                                    info={{ dataProductId: dataId, dataUserId: props.auth.user.id,quantity: quantity }}
+                                />
+                            </div>
+                        }
                     </div>
                     <div>
                         <Chat

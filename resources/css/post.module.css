@@ -1,0 +1,163 @@
+.post {
+  width: 100%;
+  height: 100%;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.post .form {
+  width: auto;
+  margin: 0 0 0 0;
+  padding: 0 0 30px 0;
+}
+
+.post .form .formImgBack {
+  width: auto;
+  height: 400px;
+  padding: 40px;
+  background-color: #434242;
+  position: relative;
+}
+
+.post .form .formImgBack .imageFile {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.post .form .formImgBack .imageFile .cancelButton {
+  font-size: 3rem;
+  color: #fff;
+  position: absolute;
+  top: -240px;
+  right: -440px;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.post .form .formImgBack .imageFile .cancelButton:hover {
+  cursor: pointer;
+}
+
+.post .form .formImgBack .imageFile .label {
+  padding: 18px 100px;
+  border-radius: 10px;
+  font-weight: 700;
+  background-color: #fcf7ef;
+}
+
+.post .form .formImgBack .imageFile .label:hover {
+  cursor: pointer;
+}
+
+.post .form .formImgBack .imageFile input {
+  display: none;
+}
+
+.post .form .formImgBack .imgNone {
+  display: none;
+}
+
+.post .form .formImgBack img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.post .form .fomrText {
+  margin: 90px auto 60px auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.post .form .fomrText .inputText {
+  width: 35vw;
+  border: 1.4px solid #ccc;
+  border-bottom: none;
+  height: 40px;
+  padding: 7px 16px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  outline: 1.4px solid #ccc;
+}
+
+.post .form .fomrText .inputIntroducet {
+  border: 1.4px solid #ccc;
+  padding: 7px 16px;
+  width: 35vw;
+  height: 100px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  outline: 1.4px solid #ccc;
+}
+
+.post .form .Select {
+  margin: 60px auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.post .form .Select select {
+  width: 37vw;
+  height: 30px;
+  padding: 7px 32px;
+  border: 1px solid #ccc;
+  outline: 1.4px solid #ccc;
+  border-radius: 5px;
+}
+
+.post .form .Number {
+  margin: 60px auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.post .form .Number input {
+  width: 36vw;
+  height: 20px;
+  padding: 10px 10px;
+  border: 1px solid #ccc;
+  outline: 1.4px solid #ccc;
+  border-radius: 5px;
+}
+
+.post .form .Price {
+  margin: 60px auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.post .form .Price input {
+  width: 35vw;
+  height: 30px;
+  padding: 7px 16px;
+  border: 1px solid #ccc;
+  outline: 1.4px solid #ccc;
+  border-radius: 5px;
+}
+
+.post .form .PostButton {
+  margin: 60px auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.post .form .PostButton button {
+  padding: 6px 24px;
+  border: #ccc solid 1px;
+  border-radius: 4px;
+  outline: 1.4px solid #ccc;
+  background-color: #fff;
+}
+/*# sourceMappingURL=post.module.css.map */

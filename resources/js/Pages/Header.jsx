@@ -31,7 +31,7 @@ function Header(props) {
                     <AddCircleIcon className={styles.iconSize} />
                 </a>
             </div>
-            <div>
+            <div className={styles.EmailIcon}>
                 <Announce
                     info={ props.info }
                 />

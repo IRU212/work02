@@ -1,0 +1,45 @@
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 0.6px solid #ccc;
+  padding: 50px 100px;
+  border-radius: 20px;
+}
+
+.login .font {
+  font-size: 0.8rem;
+  margin: 0 0 10px 0;
+}
+
+.login .inputText {
+  width: 240px;
+  height: 26px;
+  margin: 9px 0 15px 0;
+  padding: 4px 6px;
+}
+
+.login .buttonLogin {
+  margin-left: 20px;
+  padding: 6px 9px;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+}
+
+.login .buttonLogin:hover {
+  cursor: pointer;
+}
+
+.buttonRegister {
+  position: absolute;
+  top: 78%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-decoration: none;
+  color: #000;
+}
+/*# sourceMappingURL=login.module.css.map */

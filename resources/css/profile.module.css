@@ -1,0 +1,169 @@
+.profile {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.profile .backImg {
+  width: 100%;
+  height: 500px;
+}
+
+.profile .backImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.profile .intoroduce {
+  width: 100%;
+  position: relative;
+}
+
+.profile .intoroduce .IconImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -40px;
+  left: 14vw;
+}
+
+.profile .intoroduce .IconImg img {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+  border-radius: 50%;
+}
+
+.profile .intoroduce .profileText {
+  width: auto;
+  padding: 30px 25% 0 25%;
+  position: relative;
+}
+
+.profile .intoroduce .profileText .profileName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0 30px;
+}
+
+.ProfileProductList {
+  width: auto;
+  margin: 100px 0 0 0;
+  padding: 0 10%;
+}
+
+.ProfileProductList .ProfileProductListFont {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 10px 0 70px 0;
+}
+
+.ProfileProductList .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.ProfileProductList .flex .productImg {
+  width: 220px;
+  height: 220px;
+  margin: 0 40px 60px 40px;
+  padding: 10px 0;
+  background-color: antiquewhite;
+}
+
+.ProfileProductList .flex .productImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.Folllow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 30px;
+  right: 15%;
+}
+
+.Folllow a {
+  margin: 0 20px 0 20px;
+  color: #000;
+}
+
+.FollowButton {
+  position: absolute;
+  top: 22px;
+  margin: 0 0 0 100px;
+  font-size: 0.85rem;
+  padding: 10px 15px;
+  border-radius: 22px;
+  border: 1px solid #000;
+}
+
+.FollowButton:hover {
+  cursor: pointer;
+}
+
+.UnfollowButton {
+  position: absolute;
+  top: 22px;
+  margin: 0 0 0 100px;
+  font-size: 0.85rem;
+  padding: 10px 15px;
+  border-radius: 22px;
+  border: 1px solid #000;
+  color: #fff;
+  background-color: #000;
+}
+
+.UnfollowButton:hover {
+  cursor: pointer;
+}
+
+.Following {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.Following .FollowingDiv {
+  width: auto;
+  margin: 60px 30% 0 30%;
+}
+
+.Following .FollowingDiv .followList {
+  padding: 30px 60px;
+  border-bottom: 1px solid #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Following .FollowingDiv .followList .iconBack {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+}
+
+.Following .FollowingDiv .followList .iconBack img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.Following .FollowingDiv .followList .name {
+  font-size: 1.2rem;
+  margin: 7px 0 0 40px;
+  color: #000;
+}
+/*# sourceMappingURL=profile.module.css.map */

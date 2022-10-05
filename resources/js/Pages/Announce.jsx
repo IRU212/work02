@@ -1,12 +1,19 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import styles from '../../css/header.module.scss'
 import EmailIcon from '@mui/icons-material/Email';
 
 function Announce(props) {
 
     const [datas,setData]= useState()
+    const [iconDisplay,setIconDisplay] = useState(true)
 
     const userId = props.info.id
+
+    const ClickBlock = () => {
+        setIconDisplay(!iconDisplay)
+        console.log("クリックされました")
+    }
 
     useEffect(() => {
         axios
@@ -22,7 +29,19 @@ function Announce(props) {
 
     return (
         <div>
-            <EmailIcon />
+            <EmailIcon className={styles.size} onClick={ClickBlock} />
+            { iconDisplay ?
+                ''
+                :
+                <div className={styles.announceList}>
+                { datas?.map((data,index) => 
+                    <div key={index} className={styles.announceItem}>
+                        <div className={styles.title}>{ data.title }</div>
+                        <div>{ data.description }</div>
+                    </div>
+                ) }
+            </div>
+            }
         </div>
     )
 }

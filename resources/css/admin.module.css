@@ -1,0 +1,54 @@
+.admin {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.admin .sideHeader {
+  width: 10vw;
+  height: 100vh;
+  background-color: aqua;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.admin .main {
+  width: auto;
+  position: absolute;
+  left: 15vw;
+}
+
+.admin .main .mainFont {
+  font-size: 2rem;
+  margin: 60px 0 50px 80px;
+  border-bottom: 1.4px solid #000;
+  padding: 0 0 20px 40px;
+}
+
+.admin .main table {
+  border-collapse: collapse;
+  margin: 0 0 0 80px;
+}
+
+.admin .main .trTitle {
+  background-color: #cbcbcb;
+}
+
+.admin .main .trTitle .thTitle {
+  padding: 15px 90px;
+}
+
+.admin .main .trResult {
+  padding: 20px 0;
+  border: 1px solid #ccc;
+}
+
+.admin .main .trResult .thResult {
+  padding: 20px 0;
+}
+/*# sourceMappingURL=admin.module.css.map */

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .body {
   width: 100%;
   position: absolute;
@@ -7,7 +8,7 @@
 
 .productList {
   width: auto;
-  margin: 40px 0 0 0;
+  margin: 40px 0 60px 0;
   padding: 0 6%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -16,12 +17,31 @@
       flex-wrap: wrap;
 }
 
+.productList a {
+  margin: 60px 2% 0 2.6%;
+}
+
 .productList .item {
   width: 270px;
   height: 280px;
   margin: 60px 2% 0 2.6%;
   padding: 10px 0;
   background-color: antiquewhite;
+  position: relative;
+}
+
+.productList .item .SoldOutFont {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #ff3a3a;
+  color: #000;
+  padding: 16px 32px;
+  font-weight: 900;
+  font-size: 1.7rem;
+  white-space: nowrap;
 }
 
 .productList .item img {
@@ -53,6 +73,19 @@
   height: 70vh;
   padding: 12px 0;
   background-color: #ababab;
+  position: relative;
+}
+
+.HomeListDetail .HomeListDetailImgBack .SoldOutFont {
+  position: absolute;
+  padding: 30px 10vw;
+  background-color: #ff3a3a;
+  font-weight: 900;
+  font-size: 2rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .HomeListDetail .HomeListDetailImgBack img {
@@ -62,6 +95,12 @@
      object-fit: scale-down;
 }
 
+.HomeListDetail .HomeListDetailImgBack .heartPosition {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+
 .HomeListDetail .HomeListDetailText {
   width: 60vw;
   height: 100%;
@@ -69,19 +108,29 @@
   border-top: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 30px 30px 0 30px;
+  padding: 40px 30px 0 30px;
+  position: relative;
+}
+
+.HomeListDetail .HomeListDetailText .cartPosition {
+  position: absolute;
+  right: 80px;
+  top: 120px;
 }
 
 .HomeListDetail .HomeListDetailText .introduce {
-  border-bottom: 1px solid #ccc;
   margin: 0 0 20px 0;
   padding: 0 20px 15px 20px;
   font-size: 1.1rem;
 }
 
 .HomeListDetail .HomeListDetailText .price {
-  padding: 20px 20px 0px 20px;
+  padding: 40px 20px 20px 20px;
   font-size: 1.1rem;
+}
+
+.HomeListDetail .HomeListDetailText .star {
+  padding: 0 0 0 16px;
 }
 
 .Chat {
@@ -92,7 +141,13 @@
   text-align: center;
 }
 
+.Chat .chatNone {
+  margin: 50px 0;
+  color: #bbb;
+}
+
 .Chat .details {
+  margin: 60px 0;
   list-style: none;
 }
 
@@ -114,6 +169,16 @@
 .Chat .ChatWidthTrue {
   width: 100%;
   text-align: left;
+  position: relative;
+}
+
+.Chat .ChatWidthTrue img {
+  width: 50px;
+  height: 50px;
+  vertical-align: bottom;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
 }
 
 .Chat .ChatWidthTrue .ChatTrue {
@@ -125,11 +190,24 @@
   width: -moz-fit-content;
   width: fit-content;
   display: inline-block;
+  position: relative;
+  left: 70px;
 }
 
 .Chat .ChatWidthFalse {
   width: 100%;
   text-align: right;
+  position: relative;
+}
+
+.Chat .ChatWidthFalse img {
+  width: 50px;
+  height: 50px;
+  vertical-align: bottom;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  right: 0;
 }
 
 .Chat .ChatWidthFalse .ChatFalse {
@@ -141,6 +219,27 @@
   width: -moz-fit-content;
   width: fit-content;
   display: inline-block;
+  position: relative;
+  right: 70px;
+}
+
+.ChatPost {
+  width: auto;
+}
+
+.ChatPost .inputText {
+  width: 270px;
+  height: 14px;
+  margin: 0 10px 0 60px;
+  padding: 9px 6px;
+}
+
+.ChatPost .Button {
+  background-color: #000;
+  color: #fff;
+  padding: 6px 10px;
+  width: 70px;
+  border-radius: 20px;
 }
 
 .backColor {
@@ -148,10 +247,15 @@
   margin-top: 20px;
 }
 
+.ProductItemListFont {
+  margin: 80px 0 20px 8%;
+  font-size: 1.4rem;
+}
+
 .ProductItemList {
   width: auto;
-  margin: 40px 0;
-  padding: 0 6%;
+  margin: 10px 0 60px 0;
+  padding: 0 7%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,6 +272,152 @@
 }
 
 .ProductItemList .ItemList img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.Like .LikeButton {
+  width: 55px;
+  height: 55px;
+  position: relative;
+}
+
+.Like .LikeButton::before {
+  content: "";
+  position: absolute;
+  left: 25px;
+  /* x位置 */
+  top: 0;
+  /* y位置 */
+  width: 25px;
+  /* 幅 */
+  height: 45px;
+  /* 高さ */
+  background: #FF5252;
+  /* 色 */
+  border-radius: 45px 25px 0 0;
+  /* 丸み */
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  /* 角度調整 */
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  /* 回転の基準点 */
+}
+
+.Like .LikeButton::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  /* x位置 */
+  top: 0;
+  /* y位置 */
+  width: 25px;
+  /* 幅 */
+  height: 45px;
+  /* 高さ */
+  background: #FF5252;
+  /* 色 */
+  border-radius: 25px 45px 0 0;
+  /* 丸み */
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  /* 角度調整 */
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+  /* 回転の基準点 */
+}
+
+.Like .LikeButton:hover {
+  cursor: pointer;
+}
+
+.Like .UnLikeButton {
+  width: 55px;
+  height: 55px;
+  position: relative;
+}
+
+.Like .UnLikeButton::before {
+  content: "";
+  position: absolute;
+  left: 25px;
+  /* x位置 */
+  top: 0;
+  /* y位置 */
+  width: 25px;
+  /* 幅 */
+  height: 45px;
+  /* 高さ */
+  background: #ffffff;
+  /* 色 */
+  border-radius: 45px 25px 0 0;
+  /* 丸み */
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  /* 角度調整 */
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  /* 回転の基準点 */
+}
+
+.Like .UnLikeButton::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  /* x位置 */
+  top: 0;
+  /* y位置 */
+  width: 25px;
+  /* 幅 */
+  height: 45px;
+  /* 高さ */
+  background: #ffffff;
+  /* 色 */
+  border-radius: 25px 45px 0 0;
+  /* 丸み */
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  /* 角度調整 */
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+  /* 回転の基準点 */
+}
+
+.Like .UnLikeButton:hover {
+  cursor: pointer;
+}
+
+.LikeProduct {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.LikeProduct .LikeProductPadding {
+  width: auto;
+  margin: 100px 0 0 0;
+  padding: 0 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.LikeProduct .LikeProductPadding .ImgBack {
+  width: 223px;
+  height: 220px;
+  margin: 0 40px 60px 40px;
+  padding: 10px 0;
+  background-color: antiquewhite;
+}
+
+.LikeProduct .LikeProductPadding .ImgBack img {
   width: 100%;
   height: 100%;
   -o-object-fit: scale-down;

@@ -27,6 +27,13 @@ function Chat(props) {
     const ClickMoreButtonToggle = () => {
         setMoreButtonDisplay(!moreButtonDisplay)
     }
+
+    // チャットの数
+    const chatCount = datas?.filter( data => {
+        return data.product_id == props.info.dataProductId
+    } ).length
+
+    console.log(chatCount)
     
     if (results?.length == 0) {
         var data = "チャットがありません"
@@ -66,12 +73,13 @@ function Chat(props) {
                             }
                         }
                     }) }
-                    <div className={styles.chatNone}>
-                        { data }
-                    </div>
-                    <div className={`${moreButtonDisplay ? styles.moreButtonBlock : styles.moreButtonNone}`} onClick={ClickMoreButtonToggle}>
-                        もっと見る
-                    </div>
+                    { chatCount < 4 ?
+                        ''
+                        :
+                        <div className={`${moreButtonDisplay ? styles.moreButtonBlock : styles.moreButtonNone}`} onClick={ClickMoreButtonToggle}>
+                            もっと見る
+                        </div>
+                    }
                 </summary>
                 { results?.map((data,index) => {
                         if ( index > 2) {

@@ -111,4 +111,17 @@ class User extends Authenticatable
         ->withPivot('read')
         ->withTimestamps();
     }
+
+    // 通知存在判定
+    public function isRead($announcementId){
+        return $this->announcements()->where('announcement_id',$announcementId)->exists();
+    }
+
+    // 0は未読判定
+    public function JudgementRead($announcementId){
+        return $this->announcements()
+                    ->where('announcement_id',$announcementId)
+                    ->where('read',0)
+                    ->exists();
+    }
 }

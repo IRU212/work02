@@ -81,7 +81,11 @@ function HomeListDetail(props) {
                 <div className={styles.HomeListDetailText}>
                     <div className={styles.introduce}>{ data?.introduce }</div>
                     <div className={styles.price}>{ data?.price }円</div>
-                    <div><Review /></div>
+                    <div>
+                        <Review
+                            info={data?.review}
+                        />
+                    </div>
                     <div className={styles.cartPosition} onClick={ClickOrderPost}>
                         {/* 在庫が0のときは購入ボタンを表示しない */}
                         { stockJudgement ?

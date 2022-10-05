@@ -110,6 +110,10 @@
   cursor: pointer;
 }
 
+.header .EmailIcon .unread {
+  width: 5px;
+}
+
 .header .EmailIcon .announceList {
   width: 190px;
   position: absolute;

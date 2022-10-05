@@ -102,6 +102,16 @@
             }
         }
 
+        .unread{
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #ff0000;
+            position: absolute;
+            top: 0;
+            right: -2px;
+        }
+
         .announceList{
             width: 190px;
             position: absolute;

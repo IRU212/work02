@@ -7,6 +7,7 @@ function Announce(props) {
 
     const [datas,setData]= useState()
     const [iconDisplay,setIconDisplay] = useState(true)
+    const [read,setRead] = useState(true)
 
     const userId = props.info.id
 
@@ -27,9 +28,25 @@ function Announce(props) {
             })
     },[])
 
+    // 未読通知があるときは未読マークをつける
+    // 未読通知がある場合はreadJudgementに変数をいれて
+    // useEffectを起動させる
+    const result = datas?.some((item) => item.pivot.read === 0 )
+    if(!result){
+        var readJudgement = 1
+    }
+    useEffect(() => {
+        setRead(!read)
+    },[readJudgement])
+
     return (
         <div>
             <EmailIcon className={styles.size} onClick={ClickBlock} />
+            { read ?
+                <div className={styles.unread}></div>
+                :
+                ''
+            }
             { iconDisplay ?
                 ''
                 :
@@ -38,6 +55,7 @@ function Announce(props) {
                     <div key={index} className={styles.announceItem}>
                         <div className={styles.title}>{ data.title }</div>
                         <div>{ data.description }</div>
+                        <div>{ data.pivot.read }</div>
                     </div>
                 ) }
             </div>

@@ -7,6 +7,7 @@ import Chat from './Chat'
 import ProductItemList from './ProductItemList'
 import CartPost from './CartPost'
 import Like from './Like'
+import Review from './Review'
 
 function HomeListDetail(props) {
 
@@ -47,7 +48,7 @@ function HomeListDetail(props) {
         setQuantity(e.target.value)
     }
 
-    if ( data?.stock == 0 ) {
+    if ( data?.stock < 1 ) {
         var stockJudgement = true
     } else {
         var stockJudgement = false
@@ -80,6 +81,7 @@ function HomeListDetail(props) {
                 <div className={styles.HomeListDetailText}>
                     <div className={styles.introduce}>{ data?.introduce }</div>
                     <div className={styles.price}>{ data?.price }円</div>
+                    <div><Review /></div>
                     <div className={styles.cartPosition} onClick={ClickOrderPost}>
                         {/* 在庫が0のときは購入ボタンを表示しない */}
                         { stockJudgement ?

@@ -24,7 +24,7 @@ function ProductList(props) {
         <div className={styles.productList}>
             { datas?.map((data,index) => 
                 <a href={`http://localhost:8000/home/${data.id}`} key={index}>
-                    { data?.stock == 0 ?
+                    { data?.stock < 1 ?
                         <div className={styles.item}>
                             <img src={ data.image } className={styles.Img} alt="aa" />
                             <div className={styles.SoldOutFont}>Sold Out</div>
@@ -38,7 +38,7 @@ function ProductList(props) {
             ) }
                         { datas?.map((data,index) => 
                 <a href={`http://localhost:8000/home/${data.id}`} key={index}>
-                    { data?.stock == 0 ?
+                    { data?.stock < 1 ?
                         <div className={styles.item}>
                             <img src={ data.image } className={styles.Img} alt="aa" />
                             <div className={styles.SoldOutFont}>Sold Out</div>
@@ -52,7 +52,7 @@ function ProductList(props) {
             ) }
                         { datas?.map((data,index) => 
                 <a href={`http://localhost:8000/home/${data.id}`} key={index}>
-                    { data?.stock == 0 ?
+                    { data?.stock < 1 ?
                         <div className={styles.item}>
                             <img src={ data.image } className={styles.Img} alt="aa" />
                             <div className={styles.SoldOutFont}>Sold Out</div>
@@ -66,7 +66,7 @@ function ProductList(props) {
             ) }
                         { datas?.map((data,index) => 
                 <a href={`http://localhost:8000/home/${data.id}`} key={index}>
-                    { data?.stock == 0 ?
+                    { data?.stock < 1 ?
                         <div className={styles.item}>
                             <img src={ data.image } className={styles.Img} alt="aa" />
                             <div className={styles.SoldOutFont}>Sold Out</div>

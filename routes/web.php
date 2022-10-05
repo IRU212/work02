@@ -83,7 +83,6 @@ Route::get('/genre/{id}',function () {
 
 require __DIR__.'/auth.php';
 
-
 // Admin
 Route::prefix('/admin')->group(function(){
     Route::get('/login',[AdminLoginController::class,'showLoginForm'])->name('admin.login');
@@ -98,3 +97,5 @@ Route::prefix('/admin')->group(function(){
         return Inertia::render('Admin/AdminUser');
     })->name('admin.home.user');
 });
+
+Route::get('/test',[CartController::class,'test']);

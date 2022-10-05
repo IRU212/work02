@@ -38,9 +38,6 @@ function HomeListDetail(props) {
 
         axios
             .post(`http://localhost:8000/api/order/store`,data)
-            .then(() => {
-                window.location.reload()
-            })
             .catch((err) => {
                 console.log(err)
             })
@@ -68,7 +65,11 @@ function HomeListDetail(props) {
             <div className={styles.HomeListDetail}>
                 <div className={styles.HomeListDetailName}>{ data?.name }</div>
                 <div className={styles.HomeListDetailImgBack}>
-                    <div className={styles.SoldOutFont}>Sold Out</div>
+                    { stockJudgement ?
+                        <div className={styles.SoldOutFont}>Sold Out</div>
+                        :
+                        ''
+                    }
                     <img src={`http://localhost:8000/${ data?.image }`} alt="" />
                     <div className={styles.heartPosition}>
                         <Like

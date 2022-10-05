@@ -25,6 +25,19 @@
                 left: 50%;
                 transform: translate(-50%,-50%);
 
+                .cancelButton{
+                    font-size: 3rem;
+                    color: #fff;
+                    position: absolute;
+                    top: -240px;
+                    right: -440px;
+                    transform: none;
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+
                 .label{
                     padding: 18px 100px;
                     border-radius: 10px;
@@ -39,6 +52,10 @@
                 input{
                     display: none;
                 }
+            }
+
+            .imgNone{
+                display: none;
             }
 
             img{

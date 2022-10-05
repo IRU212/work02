@@ -22,6 +22,7 @@ class OrderdetailController extends Controller
         $orderDetail->product_id = $request->product_id;
         $orderDetail->order_id = $orderDetail_total;
         $orderDetail->save();
+
         return response()->json($orderDetail);
     }
 

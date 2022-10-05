@@ -15,7 +15,6 @@ function Search() {
             .then((res) => {
                 setData(res.data)
                 setSearchResults(res.data)
-                console.log(res.data)
             })
             .catch((err) => {
                 console.log(err)

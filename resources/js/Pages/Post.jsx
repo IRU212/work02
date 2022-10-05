@@ -5,6 +5,8 @@ import axios from 'axios'
 
 function Post(props) {
 
+    const [imageInput,setImageInput] = useState(false)
+
     const [name,setName] = useState()
     const [introduce,setIntroduce] = useState()
     const [image,setImage] = useState()
@@ -23,7 +25,14 @@ function Post(props) {
         setIntroduce(e.target.value)
     }
 
+    console.log(imageInput)
+
     const handleChangeImage = (e) => {
+
+        if (!e.target.files.length == 0) {
+            setImageInput(!imageInput)
+        }
+
         setImage(e.target.files[0])
         const image = e.target.files[0]
         userImg.current.title = image.name
@@ -44,6 +53,10 @@ function Post(props) {
 
     const handleChangeNumber = (e) => {
         setNumber(e.target.value)
+    }
+
+    const ClickImgCancel = () => {
+        setImageInput(!imageInput)
     }
 
     const PostClick = () => {
@@ -81,10 +94,16 @@ function Post(props) {
             <form className={styles.form}>
                 <div className={styles.formImgBack}>
                     <div className={styles.imageFile}>
-                        <label htmlFor="file_upload" className={styles.label}>ファイルを選択</label>
-                        <input type="file" accept='image/*' id='file_upload' multiple onChange={handleChangeImage} />
+                        { imageInput ?
+                            <div className={styles.cancelButton} onClick={ClickImgCancel}>×</div>
+                            :
+                            <div>
+                                <label htmlFor="file_upload" className={styles.label}>ファイルを選択</label>
+                                <input type="file" accept='image/*' id='file_upload' multiple onChange={handleChangeImage} />
+                            </div>
+                        }
                     </div>
-                    <img ref={userImg} />
+                    <img ref={userImg} className={`${ imageInput ? '' : styles.imgNone }`} />
                 </div>
                 <div className={styles.fomrText}>
                     <div><input type="text" placeholder='商品名' className={styles.inputText} onChange={handleChangeName} /></div>

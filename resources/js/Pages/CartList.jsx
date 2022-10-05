@@ -5,6 +5,7 @@ import styles from '../../css/cart.module.scss'
 import Purchase from './Purchase'
 import CartCancel from './CartCancel'
 import CartAllCancel from './CartAllCancel'
+import { data } from 'autoprefixer'
 
 function CartList(props) {
 
@@ -15,6 +16,7 @@ function CartList(props) {
             .get("http://localhost:8000/api/cart")
             .then((res) => {
                 setData(res.data)
+                console.log(res.data)
             })
             .catch((err) => {
                 console.log(err)
@@ -84,9 +86,11 @@ function CartList(props) {
                         isCartNone == 0 ? 
                         '' 
                         :
-                        <CartAllCancel
-                            info = { props.auth.user.id }
-                        /> 
+                        <div>
+                            <CartAllCancel
+                                info = { props.auth.user.id }
+                            />
+                        </div>
                     }
                 </div>
             </div>

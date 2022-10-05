@@ -104,4 +104,11 @@ class User extends Authenticatable
             
         }
     }
+
+    // 通知機能
+    public function announcements(){
+        return $this->belongsToMany(Announcement::class,'announcement_user','user_id','announcement_id')
+        ->withPivot('read')
+        ->withTimestamps();
+    }
 }

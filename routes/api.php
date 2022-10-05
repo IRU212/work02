@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AdminLoginController;
+use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\FollowController;
@@ -88,6 +89,9 @@ Route::get('/follow/{userId}/{followId}',[FollowController::class,'store']);
 Route::post('/follow/{userId}/{followId}',[FollowController::class,'store']);
 Route::get('/unfollow/{userId}/{followId}',[FollowController::class,'destroy']);
 Route::post('/unfollow/{userId}/{followId}',[FollowController::class,'destroy']);
+
+// 通知機能
+Route::get('/announcement/{userId}/{announcementId}',[AnnouncementController::class,'index']);
 
 // テスト
 // Route::get('/test',[OrderdetailController::class,'index']);

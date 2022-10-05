@@ -9,7 +9,7 @@ class Read extends Model
 {
     protected $table = "announcement_user";
 
-    protected $filable = [
+    protected $fillable = [
         "id",
         "user_id",
         "announcement_id",

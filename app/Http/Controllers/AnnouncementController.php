@@ -9,14 +9,15 @@ use Illuminate\Http\Request;
 
 class AnnouncementController extends Controller
 {
-    public function index($userId,$announcementId){
-        
-        $data = User::find($userId)->JudgementRead($announcementId);
+    public function index($userId){
+
+        // ログイン中のユーザの通知取得
+        $data = User::find($userId)->announcements()->get();
 
         // 未読メッセージを読んだら既読にする
-        if(User::find($userId)->JudgementRead($announcementId) == true){
-            Read::where('user_id',$userId)->where('announcement_id',$announcementId)->update(['read' => 1]);
-        }
+        // if(User::find($userId)->JudgementRead($announcementId) == true){
+        //     Read::where('user_id',$userId)->where('announcement_id',$announcementId)->update(['read' => 1]);
+        // }
 
         return response()->json($data);
     }

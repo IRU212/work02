@@ -7,6 +7,7 @@ import Search from './Search';
 import SideHeader from './SideHeader';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import HeaderIcon from './HeaderIcon';
+import Announce from './Announce';
 
 function Header(props) {
 
@@ -29,6 +30,11 @@ function Header(props) {
                 <a href="http://localhost:8000/post">
                     <AddCircleIcon className={styles.iconSize} />
                 </a>
+            </div>
+            <div>
+                <Announce
+                    info={ props.info }
+                />
             </div>
             <div className={styles.cartIcon}>
                 <a href="http://localhost:8000/cartlist">

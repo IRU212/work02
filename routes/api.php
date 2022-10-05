@@ -92,6 +92,8 @@ Route::post('/unfollow/{userId}/{followId}',[FollowController::class,'destroy'])
 
 // 通知機能
 Route::get('/announcement/{userId}',[AnnouncementController::class,'index']);
+Route::get('/announcement/follow/{userId}/{followId}',[AnnouncementController::class,'follow']); //フォロー通知
+Route::post('/announcement/follow/{userId}/{followId}',[AnnouncementController::class,'follow']); //フォロー通知
 
 // テスト
 // Route::get('/test',[OrderdetailController::class,'index']);

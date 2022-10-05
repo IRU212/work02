@@ -55,7 +55,11 @@ function Announce(props) {
                     <div key={index} className={styles.announceItem}>
                         <div className={styles.title}>{ data.title }</div>
                         <div>{ data.description }</div>
-                        <div>{ data.pivot.read }</div>
+                        { data.pivot.read === 0 ?
+                            ''
+                            :
+                            <div className={styles.noread}></div>
+                        }
                     </div>
                 ) }
             </div>

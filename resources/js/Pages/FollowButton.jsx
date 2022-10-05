@@ -45,6 +45,14 @@ function FollowButton(props) {
             .catch((err) => {
                 console.log(err)
         })
+        axios
+            .post(`http://localhost:8000/api/announcement/follow/${userId}/${profileId}`)
+            .then(
+                location.reload()
+            )
+            .catch((err) => {
+                console.log(err)
+        })
     }
 
     const ClickUnfollow = () => {

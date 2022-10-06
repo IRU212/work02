@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function store(Request $request){
+    public function store(PostRequest $request){
 
         $file_name = $request->image->getClientOriginalName();
         $request->image->storeAs('public/image',$file_name);

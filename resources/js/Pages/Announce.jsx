@@ -39,6 +39,9 @@ function Announce(props) {
         setRead(!read)
     },[readJudgement])
 
+    // 通知があるか判定
+    const resultBlank =  datas?.some((item) => item.id)
+
     return (
         <div>
             <EmailIcon className={styles.size} onClick={ClickBlock} />

@@ -143,6 +143,19 @@
                 border-radius: 4px;
                 outline: 1.4px solid #ccc;
                 background-color: #fff;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+            div{
+                padding: 6px 24px;
+                border: #ccc solid 1px;
+                border-radius: 4px;
+                outline: 1.4px solid #ccc;
+                background-color: #fff;
+                opacity: 0.4;
             }
         }
     }

@@ -5,7 +5,7 @@ import styles from '../../css/content.module.scss'
 
 function Review(props) {
 
-    const review = props.review
+    const review = props.info
 
     // reviewが6の場合は星の数が0
     if( review == 6 ){
@@ -14,10 +14,12 @@ function Review(props) {
         var reviewCount = review
     }
 
+    console.log(review)
+
     return (
-        <Stack spacing={1} className={styles.star}>
-            <Rating name="half-rating-read" defaultValue={reviewCount} precision={0.5} readOnly />
-        </Stack>
+        <div spacing={1} className={styles.star}>
+            <span className={styles.starRating} data-rate={review}></span>
+        </div>
       );
 }
 

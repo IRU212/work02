@@ -365,3 +365,35 @@
         }
     }
 }
+
+
+// レビュー
+
+$star-width: 20px; //星のサイズ
+
+.star{
+  &Rating{
+    position: relative;
+    font-size: $star-width; //星の大きさ。変数で指定
+
+    &::before, &::after{
+      content: "★★★★★";
+      color: #e1e1e1;   //グレー
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &::after{
+      color: #ffb448;  //黄色
+      overflow: hidden;
+    }
+  }
+}
+
+//レーティングの間隔。1~5まで0.5刻み。
+@for $i from 0 through 10 {
+  .starRating[data-rate="#{$i * 0.5}"]::after{
+    width: $i * 0.5 * $star-width;
+  }
+}

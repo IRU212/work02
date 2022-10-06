@@ -14,7 +14,7 @@ function Post(props) {
     const [genre,setGenre] = useState()
     const [price,setPrice] = useState()
     const [number,setNumber] = useState()
-    const review = 6
+    const review = 3
 
     // 画像プレビュー
     const userImg = useRef()
